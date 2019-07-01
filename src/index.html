@@ -2,18 +2,121 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- hacer responsivo (crear en css @mediaquery)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <!-- <script src="./data/patient/patient.js"></script> -->
-    <!-- <script src="./data/rickandmorty/rickandmorty.js"></script> -->
+  <!-- cabeza de la pagina home -->
+    <header class="header">Cabeza de pagina Home + icone Poketmon</header>
+    <!-- pié de la pagina redes sociales-->
+    <article id = "contact">barra de contacto de las redes sociales + facebook + instagram + twitter</article>
+    <!-- Pagina welcome pregunta el nombre del entrenador -->
+    <section id="welcome" class="home" style="display: block">
+      <h1>Hola etrenador@! Bienvenido a PoketMon. Pon tu nombre para empezarmos</h1>
+      <input type="text" placeholder="Nombre entrenador@" id="nameStart">
+      <button id="btnStart">OK</button>
+      <p id="required" style="color: red"></p>
+    </section>
+    <!-- contenido pantalla home -->
+    <main id="home" class="home" style="display: none">
+      <!-- Frase bienvenido etrenador -->
+      <!-- Frase bienvenido etrenador -->
+      <div id = "nameCoach">Hola entrenador@! </div>
+      <!-- texto de presentación de la aplicacion -->
+      <div id = "presentation">Aqui vay una presentacion sobre la aplicacion</div>
+      <!-- grafico de la data (calculo) -->
+      <article id = "dataChart">Imagem de un chart</article>
+      <!-- boton para pokedex -->
+      <article><button id="btnPokedex"> boton Pokedex</button></article>
+    </main>
+  <!-- pagina galeria de pokemons -->
+    <section id = "allPokemons" class = "screenPokeGallery" style="display: none">
+    <!-- header interactivo pagina galeria -->
+     <header id = "headerGallery" class="header">
+       <!-- boton para volver home -->
+      <button id = "btnBackHome">Cabeza pagina Pokedex boton icone Poketmon</button>
+      <!-- boton para abrir el menu de los filtros -->
+      <button id = "btnMenuFilters">menuFilters</button>
+    </header>
+    <!-- menu de filtros -->
+     <article>
+      <!-- boton teste para mostrar pokemons -->
+      <button id = "btnTest">MiPokemon</button>
+      <!-- input para busqueda -->
+      <input type="text" placeholder="busqueda Pokemon" class="textArea">
+      <!-- boton para buscar -->
+      <button>OK</button>
+      <!-- filtro orden -->
+      <select name="slctOrder" id= "slctFilterOrder">
+          <option value="a-z">Orden</option> 
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+          <option value="1-151">1-151</option>
+          <option value="151-1">151-1</option>
+        </select> 
+    </article>
+      <article> 
+      <!----filtro tipos --> 
+      <select name="slctType" id= "slctFilterType">
+          <option value="Tipos">Tipos</option> 
+          <option value="Acero">Acero</option>
+          <option value="Agua">Agua</option>
+          <option value="Bicho">Bicho</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Electrico">Electrico</option>
+          <option value="Fantasma">Fantasma</option>
+          <option value="Fuego">Fuego</option>
+          <option value="Hada">Hada</option>
+          <option value="Hielo">Hielo</option>
+          <option value="Lucha">Lucha</option>
+          <option value="Normal">Normal</option>
+          <option value="Planta">Planta</option>
+          <option value="Psiquico">Psiquico</option>
+          <option value="Roca">Roca</option>
+          <option value="Siniestro">Siniestro</option>
+          <option value="Tierra">Tierra</option>
+          <option value="Veneno">Veneno</option>
+          <option value="Volador">Volador</option>
+          </select> 
+      <!-- filtro debilidad -->
+      <select name="slctWeaknesses" id= "slctFilterWeaknesses">
+          <option value="Debilidad">Debilidad</option> 
+          <option name="w" value="Acero">Acero</option>
+          <option name="w" value="Agua">Agua</option>
+          <option name="w" value="Bicho">Bicho</option>
+          <option name="w" value="Dragon">Dragon</option>
+          <option name="w" value="Electrico">Electrico</option>
+          <option name="w" value="Fantasma">Fantasma</option>
+          <option name="w" value="Fuego">Fuego</option>
+          <option value="Hada">Hada</option>
+          <option value="Hielo">Hielo</option>
+          <option value="Lucha">Lucha</option>
+          <option value="Normal">Normal</option>
+          <option value="Planta">Planta</option>
+          <option value="Psiquico">Psiquico</option>
+          <option value="Roca">Roca</option>
+          <option value="Siniestro">Siniestro</option>
+          <option value="Tierra">Tierra</option>
+          <option value="Veneno">Veneno</option>
+          <option value="Volador">Volador</option>
+          </select>
+        <!-- filtro horario -->
+      <select name="slctTime" id= "slctFilterTime">
+          <option value="Horario">Horario</option> 
+          <option value="Mañana">Mañana</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noche">Noche</option>
+          </select> 
+    </article>
+      <article id="pokeGallery"> Aqui van presentar todos los pokemons
+        <li id="pokeList"></li>
+    </article>
+    </section>
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
