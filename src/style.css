@@ -1,10 +1,36 @@
+:root{
+    --color-red: red;
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    background-color: var(--color-red);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    list-style: none;
+    outline: 1 px solid white;
+    display: flex;
+}
+nav li a{
+    /* outline: 1px solid white; */
+    padding-right: 10px;
+}
+nav li a{
+    color: beige;
+    text-decoration: none;
+}
 body {
-    
-    background-color: #9AB1C3;
+    background-color: white;
     font-family: sans-serif
 }
 
-.header{
+/* .header{
     color: #911217;
     font-size: 20px;
     background-color:  #E71D23 !important;
@@ -17,12 +43,11 @@ body {
     width: 100%;
     height: 50px;
     text-align: left; 
-    padding: 20px;
-}
+    padding: 20px;                
+} */
 .home{
     width: 700px;
     color:#333333;
-    background-color: white;
     font-size: 15px;
     margin : auto;
     padding: 100px;
@@ -69,8 +94,6 @@ body {
 }
 
 #pokeGallery{
-    width: 500px;
-    
     color:#333333;
     font-size: 15px;
     margin : auto;

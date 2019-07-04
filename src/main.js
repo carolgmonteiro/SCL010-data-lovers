@@ -5,91 +5,140 @@ const contPokeGallery = document.getElementById("pokeGallery");
 const contPokeList =document.getElementById("pokeList");
 //criar variable para linkear la con la data Pokemon
 const data = POKEMON.pokemon;
-let nameCoachHome = document.getElementById("nameCoach");
+//variable para imprimir el card pokemon
+let pokeInfoCard = "";
+let condition = "";
+// let nameCoachHome = document.getElementById("nameCoach");
 
 //pagina welcome para la pagina home con condicional
-document.getElementById("btnStart").addEventListener ("click", ( ) => {
-  //Guardar el nombre del usuario
-let userName = document.getElementById("nameStart").value;
-console.log(userName);
-  // Mejorar código de validación nombre
-  if (userName.length > 0)
-    {
-      document.getElementById("welcome").style.display = "none";
-      document.getElementById("home").style.display = "block";
-      nameCoachHome.innerHTML = "¡Hola " + userName + "!";
-    } else
-    {
-      document.getElementById("required").innerHTML = "¡Sin nombre no empieza!";
-    }
-  })
+// document.getElementById("btnStart").addEventListener ("click", ( ) => {
+//   //Guardar el nombre del usuario
+// let userName = document.getElementById("nameStart").value;
+// console.log(userName);
+//   // Mejorar código de validación nombre
+//   if (userName.length > 0)
+//     {
+//       document.getElementById("welcome").style.display = "none";
+//       document.getElementById("home").style.display = "block";
+//       nameCoachHome.innerHTML = "¡Hola " + userName + "!";
+//     } else
+//     {
+//       document.getElementById("required").innerHTML = "¡Sin nombre no empieza!";
+//     }
+//   })
 
+//IMPRIMIR LOS CARDS DINAMICOS EN HTML
+// const showPokemon = (data) => {
+  for (let i = 0; i< data.length; i++){
+  //crear variable para crear los DIVS dinamicos
+   let pokeCard = document.createElement("div");
+   pokeInfoCard.id = data[i].name;
+   pokeInfoCard.className = "pokeList";
+   console.log(pokeCard);
+  //crear variable para crear imagenes dinamicas
+   let pokeImage = document.createElement("img");
+   pokeImage.src = data[i].img;
+   console.log(pokeImage);
+  //crear variable para crear contenedores de texto
+  let pokeId = document.createElement("p");
+  pokeId.textContent = data[i].id;
+  console.log(pokeId);
+  //generar contenedores
+  pokeCard.appendChild(pokeImage);
+  console.log();
+  pokeCard.appendChild(pokeId);
+  //para imprimir en HTML
+  document.getElementById("pokeList").appendChild(pokeCard).innerHTML;
+  }
+  // };
+  
 //pagina home para pokedex
 document.getElementById("btnPokedex").addEventListener ("click", ( ) => {
   //Guardar el nombre del usuario
   document.getElementById("home").style.display = "none";
   document.getElementById("allPokemons").style.display = "block";
-  allPokemons =  data.map(data => `${data.name} ${data.type}`) ; 
-  contPokeList.innerHTML = allPokemons;
+  // allPokemons =  data.map(data => `${data.name} ${data.type}`) ; 
+  // contPokeList.innerHTML = showPokemon(data);
   })
 
-// crear variable para los filtros
-let weaknesses = "";
-let spawnTime = "";
-let searchPoke = "";
-let pokeFire = "";
-let pokeWater = "";
-let pokemon = "";
-let name = "";
-let id = "";
-let type = "";
-let number = "";
-let weak = "";
 
-//Filtro por Tipo
-document.getElementById("slctFilterType").addEventListener ("input", ( ) => {
-  //para limpiar la pantalla
-  contPokeList.innerHTML = "";
+
+//Filtro por Tipo (teste)
+document.getElementById("slctFilterType").addEventListener ("change", ( ) => {
+  pokeInfoCard = "";
   //Guardar la selección del usuario
-  let typeElected = document.getElementById("slctFilterType").value;
-  console.log(typeElected);
+  let condition = document.getElementById("slctFilterType").options[document.getElementById("slctFilterType").selectedIndex].value;
+  console.log(condition);
+// if(["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"].includes(condition)){
+//   return data.filter(data => data.type[0] === condition || data.type[1] === condition)
+// } else { 
+//   return data.filter(data => data.name === condition || data.id === parseInt(condition));
+// }
+//Mostrar nuevo texto en Index.html 
+document.getElementById("pokeList").value = window.data.filterPokemon(data, condition);
+});
+
+
+//Select de tipos
+// containerSelect.addEventListener("change", () => {
+//   cardHTML = "";
+//   search = containerSelect.value;
+//   showElements(window.pokemonData.filterData(allPokemon, search));
+// }); 
+// filterData: (data,condition) => {
+//   if (["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"].includes(condition)){
+//     return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
+//   } else {
+//     return data.filter((a) => a.name === condition || a.id === parseInt(condition));
+//   }
+// } 
+// ,
+
+// //Filtro por Tipo
+// document.getElementById("slctFilterType").addEventListener ("input", ( ) => {
+//   //para limpiar la pantalla
+//   contPokeList.innerHTML = "";
+//   //Guardar la selección del usuario
+//   let typeElected = document.getElementById("slctFilterType").value;
+//   console.log(typeElected);
   
-if(typeElected === "Fuego"){
-  let pokeFire = data.filter(data => data.type == "Fire");
-  console.log(pokeFire);
-  for(let i = 0 ; i < pokeFire.length ; i++){
-    name += pokeFire[i].name;
-    number += pokeFire[i].num;
-    type += pokeFire[i].type;
-    weak += pokeFire[i].weaknesses;
-  }
+// if(typeElected === "Fuego"){
+//   let pokeFire = data.filter(data => data.type == "Fire");
+//   console.log(pokeFire);
+//   for(let i = 0 ; i < pokeFire.length ; i++){
+//     name += pokeFire[i].name;
+//     number += pokeFire[i].num;
+//     type += pokeFire[i].type;
+//     weak += pokeFire[i].weaknesses;
+//   }
   
-  contPokeList.innerHTML = `${name}`;
-}
+//   contPokeList.innerHTML = `${name}`;
+// }
 
-  })
+// })
 
-//Filtro por debilidad
-document.getElementById("slctFilterWeaknesses").addEventListener ("input", ( ) => {
-   //para limpiar la pantalla
-   contPokeList.innerHTML = "";
-  let pokeWeakFire = data.filter(data => data.type == "Fire");
-  console.log(pokeWeakFire);
-  for(let i = 0 ; i < pokeWeakFire.length ; i++){
-    name += pokeWeakFire[i].name;
-    number += pokeWeakFire[i].num;
-    type += pokeWeakFire[i].type;
-    weak += pokeWeakFire[i].weaknesses;
-  }
+// //Filtro por debilidad
+// document.getElementById("slctFilterWeaknesses").addEventListener ("input", ( ) => {
+//    //para limpiar la pantalla
+//    contPokeList.innerHTML = "";
+//   let pokeWeakFire = data.filter(data => data.type == "Fire");
+//   console.log(pokeWeakFire);
+//   for(let i = 0 ; i < pokeWeakFire.length ; i++){
+//     name += pokeWeakFire[i].name;
+//     number += pokeWeakFire[i].num;
+//     type += pokeWeakFire[i].type;
+//     weak += pokeWeakFire[i].weaknesses;
+//   }
   
-  contPokeList.innerHTML = `${number} ${name} ${type} ${weak}`;
+//   contPokeList.innerHTML = `${number} ${name} ${type} ${weak}`;
 
-  })
+//   })
 
-//Filtro por horario
-document.getElementById("slctFilterTime").addEventListener ("input", ( ) => {
+// //Filtro por horario
+// document.getElementById("slctFilterTime").addEventListener ("input", ( ) => {
 
-})
+// })
+
 
 //ORDENAR CRECENTE Y DECRESCENTE
 document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
@@ -113,7 +162,7 @@ document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
   }else if(orderElected === "1-151"){
       result = data.sort((a,b) => a.id.localeCompare(b.id));
       for(let i = 0 ; i < result.length ; i++){
-        id += result[i].name;
+        numberId += result[i].id;
   }
 }
     console.log(result);
