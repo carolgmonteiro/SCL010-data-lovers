@@ -2,118 +2,176 @@
 const btnPokedex = document.getElementById("btnPokedex");
 const slctFilWeak = document.getElementById("slctFilterWeaknesses");
 const contPokeGallery = document.getElementById("pokeGallery");
-const contPokeList =document.getElementById("pokeList");
+// const contPokeList =document.getElementById("pokeList");
+const pokeResult =document.getElementById("pokeList");
 //criar variable para linkear la con la data Pokemon
 const data = POKEMON.pokemon;
-//variable para imprimir el card pokemon
-let pokeInfoCard = "";
-let condition = "";
-let pokeCard = "";
-let pokeId = "";
+let cardGallery; 
+let showModal;
 
-//IMPRIMIR LOS CARDS DINAMICOS EN HTML
-const showPokemon = (data) => {
-  for (let i = 0; i< data.length; i++){
-  //crear variable para crear los DIVS dinamicos
-   let pokeCard = document.createElement("div");
-   pokeInfoCard.id = data[i].id;
-   pokeInfoCard.className = "pokeList";
-  //  console.log(pokeCard);
-  //crear variable para crear contenedores de texto
-  let pokeId = document.createElement("h3");
-  pokeId.textContent = data[i].id;
-  // console.log(pokeId);
-  //crear variable para crear contenedores de texto
-  let pokeName = document.createElement("h3");
-  pokeName.textContent = data[i].name;
-  //crear variable para crear contenedores de texto
-  let pokeType = document.createElement("h3");
-  pokeType.textContent = data[i].type;
-  // console.log(pokeType);
-  //crear variable para crear imagenes dinamicas
-   let pokeImage = document.createElement("img");
-   pokeImage.src = data[i].img;
-  //  console.log(pokeImage);
-  //generar contenedores
-  pokeCard.appendChild(pokeId);
-  pokeCard.appendChild(pokeName);
-  pokeCard.appendChild(pokeType);
-  pokeCard.appendChild(pokeImage);
-
-  //para imprimir en HTML
-  document.getElementById("pokeList").appendChild(pokeCard).innerHTML;
-  }
-  };
-  
 //pagina home para pokedex
 document.getElementById("btnPokedex").addEventListener ("click", ( ) => {
   //Guardar el nombre del usuario
-  document.getElementById("home").style.display = "none";
+  document.getElementById("home").style.display = "flex";
   document.getElementById("allPokemons").style.display = "block";
-  showPokemon(data);
-  })
-//Filtro por Tipo (teste)
+  //Todos los pokemones  
+  cardGallery =  data.map(data => `${data.name} ${data.type}`) ; 
+  for (let i = 0; i< data.length; i++){
+  console.log(cardGallery);
+};
+})
+
+ //Crear Elementos Galería
+ const showGallery = (data) => {
+  for (let i = 0; i < data.length; i++){
+    cardGallery +=
+     `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+    <h3 class="card-title">${data[i].num} ${data[i].name}</h3>
+     <img class="card-img-top" src=${data[i].img} alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Type: ${data[i].type}.</p>
+  </div>
+</div>`
+  } pokeResult.innerHTML = cardGallery;
+  };
+
+//Mostrar cards en orden aleatorio
+const radomData = (data)=>{
+  return data.sort(() => Math.random() - 0.5)
+};
+showGallery(radomData(data));
+
+//Filtro por Tipo 
 document.getElementById("slctFilterType").addEventListener ("change", ( ) => {
-  pokeInfoCard = "";
-  name = "";
-  number = "";
-  type = "";
+  pokeResult.innerHTML="";
   pokeTypeSelection = document.getElementById("slctFilterType").options.value;
   //Guardar la selección del usuario
   let condition = document.getElementById("slctFilterType").options[document.getElementById("slctFilterType").selectedIndex].value;
   console.log(condition);
   let pokeSearch = data.filter(data => data.type[0] === condition || data.type[1] === condition); 
-   for (let i = 0; i< pokeSearch.length; i++){
-     //crear variable para crear los DIVS dinamicos
-    name += (pokeSearch[i].name);
-    number += (pokeSearch[i].id);
-    type += (pokeSearch[i].type);
-  }
-if(pokeTypeSelection){
-  return pokeSearch;
-} else { 
-  // pokeName += data.filter(data => data.name === condition || data.id === parseInt(condition));
+  for (let i = 0; i< pokeSearch.length; i++){
+    pokeResult.innerHTML +=`<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${pokeSearch[i].id})">
+    <h3 class="card-title">${pokeSearch[i].num} ${pokeSearch[i].name}</h3>
+    <img class="card-img-top" src=${pokeSearch[i].img} alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Type: ${pokeSearch[i].type}.</p>
+  </div>
+</div>`
 }
-// contPokeList.innerHTML = `${number} ${name} ${type}`;
-  //para imprimir en HTML
-  
-// showPokemon(pokeSearch);
-// document.getElementById("pokeList").appendChild(pokeCard).innerHTML = pokeSearch.name;
-//Mostrar nuevo texto en Index.html 
-// document.getElementById("pokeList").value = window.data.filterPokemon(data, condition);
 });
 
 
-//ORDENAR CRECENTE Y DECRESCENTE
-document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
-   //para limpiar la pantalla
-   contPokeList.innerHTML = "";
-  //Guarda el valor elejido
-  let orderElected = document.getElementById("slctFilterOrder").value;
-  console.log(orderElected);
-  let result = "";
-  
-    if(orderElected === "Z-A"){
-    result = data.sort((a,b) => b.name.localeCompare(a.name));
-    for(let i = 0 ; i < result.length ; i++){
-      name += result[i].name;
-    } 
-  }else if(orderElected === "A-Z"){
-    result = data.sort((a,b) => a.name.localeCompare(b.name));
-    for(let i = 0 ; i < result.length ; i++){
-      name += result[i].name;
-    } 
-  }else if(orderElected === "1-151"){
-      result = data.sort((a,b) => a.id.localeCompare(b.id));
-      for(let i = 0 ; i < result.length ; i++){
-        numberId += result[i].id;
-  }
+//Filtro por Debilidad
+document.getElementById("slctFilterWeaknesses").addEventListener ("change", ( ) => {
+  pokeResult.innerHTML="";
+  pokeTypeSelection = document.getElementById("slctFilterWeaknesses").options.value;
+  //Guardar la selección del usuario
+  let condition = document.getElementById("slctFilterWeaknesses").options[document.getElementById("slctFilterWeaknesses").selectedIndex].value;
+  console.log(condition);
+  let pokeSearch = data.filter(data => data.weaknesses[0] === condition || data.weaknesses[1] === condition  || data.weaknesses[3] === condition); 
+  for (let i = 0; i< pokeSearch.length; i++){
+    pokeResult.innerHTML +=`<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+    <h3 class="card-title">${pokeSearch[i].num} ${pokeSearch[i].name}</h3>
+    <img class="card-img-top" src=${pokeSearch[i].img} alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Type: ${pokeSearch[i].type}.</p>
+  </div>
+</div>`
 }
-    console.log(result);
-    contPokeList.innerHTML = `${name}`;
-    //else if (orderElected === "A-Z"){
-    //   result = data.sort((a,b) => a.name.localeCompare(b.name));
-    //   console.log(result);
-    // }
+});
+
+
+document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
+  pokeResult.innerHTML = "";
+  //Guardar la selección del usuario
+  let ordenValue = document.getElementById("slctFilterOrder").value;
+  console.log(ordenValue);
+
+
+//Orden de 151-1
+  if(ordenValue === "151-1"){
+  let sortNumDesc = data.sort(function(a,b){
+              if (a.num < b.num) {
+                  return 1;
+             }else{
+             return-1;
+          }
+         });
+          console.log(sortNumDesc);
+ for(let i = 0 ; i < sortNumDesc.length ; i++){
+  pokeResult.innerHTML +=
+  `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+ <h3 class="card-title">${sortNumDesc[i].num} ${sortNumDesc[i].name}</h3>
+  <img class="card-img-top" src=${sortNumDesc[i].img} alt="Card image cap">
+<div class="card-body">
+ <p class="card-text">Type: ${sortNumDesc[i].type}.</p>
+</div>
+</div>`
+}
+  }
+//Orden de 1-151
+   if(ordenValue === "1-151"){
+      let sortNumAsc = data.sort(function(a,b){
+                  if (a.num > b.num) {
+                      return 1;
+                 }else{
+                 return-1;
+              }
+             });
+              console.log(sortNumAsc);
+     for(let i = 0 ; i < sortNumAsc.length ; i++){
+      pokeResult.innerHTML +=
+      `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+     <h3 class="card-title">${sortNumAsc[i].num} ${sortNumAsc[i].name}</h3>
+      <img class="card-img-top" src=${sortNumAsc[i].img} alt="Card image cap">
+    <div class="card-body">
+     <p class="card-text">Type: ${sortNumAsc[i].type}.</p>
+    </div>
+    </div>`
+    }
+      }
+//Orden de A-Z
+if (ordenValue === "A-Z"){
+  let sortNameAz  = data.sort(function(a,b){
+              if (a.name > b.name) {
+                  return 1;
+             }else{
+             return-1;
+          }
+         });
+          console.log(sortNameAz);
+ for(let i = 0 ; i < sortNameAz.length ; i++){
+  pokeResult.innerHTML +=
+  `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+ <h3 class="card-title">${sortNameAz[i].num} ${sortNameAz[i].name}</h3>
+  <img class="card-img-top" src=${sortNameAz[i].img} alt="Card image cap">
+<div class="card-body">
+ <p class="card-text">Type: ${sortNameAz[i].type}.</p>
+</div>
+</div>`
+}
+  }
+//Orden de Z-A
+if(ordenValue === "Z-A"){
+  let sortNameZa  = data.sort(function(a,b){
+              if (a.name < b.name) {
+                  return 1;
+             }else{
+             return-1;
+          }
+         });
+          console.log(sortNameZa);
+ for(let i = 0 ; i < sortNameZa.length ; i++){
+  pokeResult.innerHTML +=
+  `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+ <h3 class="card-title">${sortNameZa[i].num} ${sortNameZa[i].name}</h3>
+  <img class="card-img-top" src=${sortNameZa[i].img} alt="Card image cap">
+<div class="card-body">
+ <p class="card-text">Type: ${sortNameZa[i].type}.</p>
+</div>
+</div>`
+}
+  }
 })
+
 

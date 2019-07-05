@@ -8,7 +8,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 nav ul{
     list-style: none;
@@ -58,27 +58,27 @@ body {
     color: #333333;
     background: #C5DAEA;
     font-size: 15px;
-    margin : auto;
     padding: 50px;
-    display: flex;  
-    height: 300px;
-    justify-content: space-between;
-    background-size: cover;
+    height: 500px;
+    /* background-size: cover; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    /* border: 1px black; */
 }
 .homeImg{
     max-width: 20px;
     margin-top: 10px;
-    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .optionPoket{
-    width: 300px;
-    height: 50px;
-    background: white;
-    opacity: 0.60;
-    display: flex;
-    justify-content: space-between;
     padding: 100px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
 }
 #btnPokedex{
     font-family: sans-serif;
@@ -116,35 +116,48 @@ body {
     color: #333333;
 }
 
-/* .screenPokeGallery{
-    color:#333333;
-    background: rgb(212, 225, 235);
-    font-size: 15px;
-    margin : auto;
-    padding: 50px;
-    display: flex;  
-    height: 300px;
-    justify-content: space-between;
-    background-size: cover;
-} */
+/* .pokeCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-/* .input{
-    text-align: center;
-    background-color: white;
+} */
+/* cards nuevos */
+.card {
     color: #333333;
-    outline: none;
-    border-radius: 5px;
-    font-family: monospace;
-    font-size: 18px;
-    font-style: initial;
-    height: 20px;
     width: 200px;
-    border: 2px solid #333333;
+    height: 260px;
+    margin: 20px;
+    text-align: center;
+    background-color:  rgb(223, 222, 222);
+    border-radius: 8px;
+    /* border-color: rgba(167, 107, 231, 0.568); */
+    border-width: 3px;
+    margin-right: 40px;
+  }
+  .card img {
     
-    padding: 15px;
-} */
+    width: 130px;
+    height: 130px;
+    align-self: center;
+    margin: 1em;
+  }
 
- footer {
+  .card-body{
+    width: 200px;
+    height: 140px; 
+    padding: 0px;
+  }
+  
+  .row {
+    margin-left: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+ /* footer {
     display: flex;
 }
 
@@ -157,11 +170,11 @@ body {
 .info-box {
     display: flex;
     align-items: right;
-}
-
+} */
+/* 
 .footer-info {
     width: 50%;
-}
+} */
 
 .social-icons img{
     max-width: 150px;
@@ -169,8 +182,15 @@ body {
     align-content: flex-end;
 }
 
+.social-icons{
+    display: inline-flex;
+    max-width: 150px;
+    margin-top: 10px;
+    /* align-content: flex-end; */
+}
+
 .copyright{
-    display: block;
+    display: flex;
     text-align: center;
     padding-top: 17px;
     font-size: 14px;
@@ -181,8 +201,8 @@ body {
     box-sizing: border-box;
 
 }
-.copyright a{
+/* .copyright a{
     text-align: center;
     color: rgba(255, 255, 255, 0.815);
     text-decoration: none;
-}
+} */
