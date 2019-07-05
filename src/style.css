@@ -1,28 +1,31 @@
-:root{
-    --color-red: red;
-}
 html, body {
     margin: 0px;
     padding: 0px;
 }
 nav{
-    background-color: var(--color-red);
-    padding: 20px;
-    display: flex;
+    background-color: #E71D23;
+    padding: 10px;
     justify-content: space-between;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 nav ul{
     list-style: none;
     outline: 1 px solid white;
     display: flex;
 }
-nav li a{
-    /* outline: 1px solid white; */
-    padding-right: 10px;
+a img ul{
+    padding-right: 100px;
+    padding-left: 100px;
 }
 nav li a{
-    color: beige;
+    /* outline: 1px solid white; */
+    padding-right: 100px;
+    padding-left: 100px;
+}
+nav li a{
+    color: white;
     text-decoration: none;
 }
 body {
@@ -30,45 +33,62 @@ body {
     font-family: sans-serif
 }
 
-/* .header{
-    color: #911217;
-    font-size: 20px;
-    background-color:  #E71D23 !important;
-    z-index: 10;
-    position: static !important;
-    box-shadow: 0px 5px 5px 0px;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    text-align: left; 
-    padding: 20px;                
-} */
+.headerInfo{
+    background: #C5DAEA;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box {
+    background-color: white;
+    border-radius:30px;
+    border: 2px solid #333333;
+    font-size: 14px;
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    justify-content :right;
+    outline: none;
+    padding: 5px;
+    width: 220px;
+ }
+
 .home{
-    width: 700px;
-    color:#333333;
+    color: #333333;
+    background: #C5DAEA;
     font-size: 15px;
     margin : auto;
-    padding: 100px;
-    align-items: baseline;
-    opacity: 0.80;
-    justify-content: left ;
+    padding: 50px;
     display: flex;  
-    flex-flow: row wrap;
-    text-align: left;
-    width: 500px;
-    height: 400px;
+    height: 300px;
+    justify-content: space-between;
+    background-size: cover;
+}
+.homeImg{
+    max-width: 20px;
+    margin-top: 10px;
+    align-content: flex-start;
+}
+
+.optionPoket{
+    width: 300px;
+    height: 50px;
+    background: white;
+    opacity: 0.60;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
 }
 #btnPokedex{
     font-family: sans-serif;
     font-size: 15px;
-    color: #333333;
+    color: white;
     border: 2px solid #333333;
-    width: 220px;
+    width: 150px;
     padding: 10px;
     cursor: pointer;
-    background-color: white;
+    background-color: #0070B6;
     margin-bottom: 10px;
     border-radius: 20px;
     outline: none;  
@@ -77,67 +97,38 @@ body {
     background-color: #DCDCDC;
     color: #333333;
 }
-.screenPokeGallery{
-    width: 500px;
-    color:#333333;
-    background-color: white;
+
+#btnPoketGo{
+    font-family: sans-serif;
     font-size: 15px;
-    margin : auto;
-    padding: 100px;
-    align-items: baseline;
-    opacity: 0.80;
-    justify-content: left ;
-    display: flex;  
-    flex-flow: row wrap;
-    text-align: left;
-    height: 400px;
+    color: #333333;
+    border: 2px solid #333333;
+    width: 150px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    outline: none;  
+}
+#btnPoketGo:hover{
+    background-color: #DCDCDC;
+    color: #333333;
 }
 
-#pokeGallery{
+/* .screenPokeGallery{
     color:#333333;
+    background: rgb(212, 225, 235);
     font-size: 15px;
     margin : auto;
-    padding: 100px;
-    align-items: baseline;
-    opacity: 0.80;
+    padding: 50px;
     display: flex;  
-    flex-flow: row wrap;
-    text-align: left;
-}
-#pokeList{
-    width: 500px;
-    height: 2000px;
-    color:#333333;
-    font-size: 15px;
-    margin : auto;
-    padding: 50px;  
-}
-/* .infos {
-    
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin : 100px auto;
-    padding: 40px;
-    height: 2200px;
-    width : 600px;
-    border-radius: 5px;
-    position: relative;
-    background-color: white;
-    opacity: 0.80;
+    height: 300px;
+    justify-content: space-between;
+    background-size: cover;
 } */
 
-.textArea {
-    resize: none;
-    overflow: auto;
-    background-color: #DCDCDC;
-    outline: none;
-    width: 150px;
-    border-radius: 20px;
-    border: none;
-    padding: 5px;
-    border: 2px solid #333333;
-    font-size: 15px;
-}
-.input{
+/* .input{
     text-align: center;
     background-color: white;
     color: #333333;
@@ -149,67 +140,49 @@ body {
     height: 20px;
     width: 200px;
     border: 2px solid #333333;
-    float: inline-start;
+    
     padding: 15px;
+} */
+
+ footer {
+    display: flex;
 }
-/* .buttonEncDec{
-    font-family: monospace;
-    font-size: 20px;
-    background: transparent;
-    color: #333333;
-    cursor: pointer;
-    border-radius: 10px;  
-    border: none;
-    outline: none;
-    width: 120px;
+
+.footer-content {
+    background: #f1f1f1;
+    height: 100px;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.info-box {
+    display: flex;
+    align-items: right;
+}
+
+.footer-info {
+    width: 50%;
+}
+
+.social-icons img{
+    max-width: 150px;
+    margin-top: 10px;
+    align-content: flex-end;
+}
+
+.copyright{
+    display: block;
+    text-align: center;
+    padding-top: 17px;
+    font-size: 14px;
+    height: 50px;
+    background: #333333;
+    color: #fff;
+    width: 100%;
     box-sizing: border-box;
+
 }
-
-.buttonEncDec:hover{
-    color: #333333;
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-} */
-
-/* .buttonBack{
-    font-family: monospace;
-    font-size: 20px;
-    background: transparent;
-    color: #333333;
-    cursor: pointer;
-    border-radius: 10px;  
-    border: none;
-    outline: none;
-    width: 100px;
-    float: right;
-    height: 70px;
-    box-sizing: content-box
+.copyright a{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.815);
+    text-decoration: none;
 }
-
-.buttonBack:hover{
-    color: #333333;
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-} */
-
-/* .button{
-    font-family: monospace;
-    font-size: 15px;
-    background: transparent;
-    color: #333333;
-    cursor: pointer;
-    border-radius: 10px;  
-    border: none;
-    outline: none;
-    width: 100px;
-    box-sizing: border-box;
-}
-
-.button:hover{
-    color: #333333;
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-} */
