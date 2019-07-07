@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <!-- hacer responsivo (crear en css @mediaquery)-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>PoketMon</title>
     <link rel="stylesheet" href="style.css">
@@ -14,53 +14,69 @@
     <header>
       <nav>
         <div class= "logoImg">
-            <ul><a href="index.html"><img src="logo poketmon.png" height="50px" alt="logo_poketMon"></a> </ul>
+            <ul><a href="index.html"><img src="logo poketmon.png" alt="logo_poketMon" class="logo-poketmon"></a> </ul>
         </div>
-         <div class="search-box">
-             <div class = "nav_options">
-            <input type="search" id="search" placeholder="Busca aquí tu pokemón">
-            <a href="#" class="social-icons"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="20px" alt="search"></a>
-          </div>
-      
+        
+          <div class="social-icons">
+              <!-- <div class="search-box">
+                  <input type="search" placeholder="Busca aquí tu pokemón">
+                  <span class="icon"><i class="fa fa-search"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="20px" alt="search"></i></span>
+                </div> -->
+              <div class="social-icons img">
+                  <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="face-logo.png" ></a>
+                </div>
+                <div class="social-icons img">
+                  <a href="https://www.instagram.com/pokemongochileoficial/"><img src="insta-logo.png" ></a>
+                </div>
+          
+            </div>
     </nav>
     </header>
-    <!-- contenido pantalla home -->
-   <main id="home" class="home" style="display: flex">
-      <section>
-        <div>
-          <h1 style="color: #333333">¡Hola entrenador bienvenido a PoketMon!</h1>
-        </div>
-        <div>
-          <h2>Las informaciones que tu necesitas  <br>sobre Pokemon en tu bolsillo</h2>
-        </div>
-        <div>
-      </section>
+    <header class="headerInfo">
       <div>
-        <div>
-          <div><button id="btnPokedex">poketDex</button></div>
-          <div><h3>Acceda a los dados sobre los Pokemones de la Generación Kanto</h3></div>
-        </div>
-         <div><img src="https://image.flaticon.com/icons/svg/1752/1752772.svg" height="200px" alt="pikachuImg"></div>
+        <h1 class= "titleOptionHome">¡Hola bienvenido a PokeTmon!</h1>
+      </div>
+      <div>
+        <h3 class="InfoHome"><b>PokeTmon</b> es tu nueva plataforma de consulta Pokemon de bolsillo</h3>
+      </div>
+    </header>
+    <!-- contenido pantalla home -->
+   <main id="home" class="home">
+      <div class = "contOptionPoketLeft">
+          <div class = "optionPoketLeft">
+              <div>
+                  <a href="#allPokemons" style="transition: all .50s linear;"><input type="button" value="poketDex" id="btnPokedex"></a>  
+                </div>
+          <div class= "textOptionHome">
+            <h4>Acceda a los <b>datos sobre los Pokemons</b> de la <b>Generación "Kanto"</b> y tengas toda la información que necesites para las batallas</h4>
+          </div>
+          </div>
+         <div class="homeImg">
+            <img src="PokeTdex.png" alt="PoketDexImg" class="PokeTdex">
         </div>
       </div>
-        <div>
-          <div>
-            <div><button id="btnPoketGo">+ poketGo</button></div>
-          <div><h3>Vea tips e links importantes sobre el Juego Pokémon GO</h3></div>
-        </div>
-        <div><img src="https://image.flaticon.com/icons/svg/287/287223.svg" height="200px" alt="pikachuImg"></div>
-      </div>
-    <!-- </div> -->
+        <div class = "contOptionPoketRight">
+            <div class="homeImg">
+                <img src="PokeTGo.png" alt="PoketGoImg" class="PokeTGo">
+              </div>
+          <div class = "optionPoketRight">
+              <div>
+                  <button id="btnPoketGo">+ poketGo</button>
+                </div>
+          <div class= "textOptionHome">
+            <h4>Pokemón Go: Vea tips y links de cómo empezar a jugar, calculadoras para combates y las mejores reds para se conectar con otros jugadores</h4>
+          </div>
+          </div>
+    </div>
     </main>
   <!-- pagina galeria de pokemons -->
     <section id = "allPokemons">
-      <header class="headerInfo">
+      <header class="headerFilter">
           <div class = "nav_options">
-              <a href="#" class="social-icons"><img src="icone filtro.png" alt="filtro"></a>
-        </ul>
+              <a href="index.html" class="social-icons"><img src="icone filtro.png" alt="icone filtro" class="iconeFiltro"></a>
         </div>
-     <article>
-      <!-- filtro orden -->
+        <!-- filtro orden -->
+     <div>
       <select name="slctOrder" id= "slctFilterOrder" class="search-box">
           <option value="a-z">Orden</option> 
           <option value="A-Z">A-Z</option>
@@ -68,9 +84,9 @@
           <option value="1-151">1-151</option>
           <option value="151-1">151-1</option>
         </select> 
-    </article> 
-      <article> 
+      </div>
       <!----filtro tipos --> 
+      <div>
       <select name="slctType" id= "slctFilterType" class="search-box">
           <option value="Tipos">Tipos</option> 
           <!-- <option value="Steel">Acero</option> -->
@@ -91,7 +107,9 @@
           <option value="Ground">Tierra</option>
           <option value="Poison">Veneno</option>
           <option value="Flying">Volador</option>
-          </select> 
+          </select>
+        </div>
+        <div>
       <!-- filtro debilidad -->
       <select name="slctWeaknesses" id= "slctFilterWeaknesses" class="search-box">
         <option value="Debilidad">Debilidad</option> 
@@ -114,31 +132,29 @@
         <option value="Poison">Veneno</option>
         <option value="Flying">Volador</option>
           </select>
-        <!-- filtro horario
-      <select name="slctTime" id= "slctFilterTime" class="search-box">
-          <option value="Horario">Horario</option> 
-          <option value="Mañana">Mañana</option>
-          <option value="Tarde">Tarde</option>
-          <option value="Noche">Noche</option>
-          </select>  -->
+        </div>
+        <div class="search-box">
+            <input type="search" placeholder="Busca aquí tu pokemón">
+            <span class="icon"><i class="fa fa-search"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="20px" alt="search"></i></span>
+          </div>
         </header>
-      </section>
-    </article>
-      <div id="pokeGallery">
+      <!-- <div id="pokeGallery"> -->
         <!-- <div id="pokeList" class="pokeCards"></div> -->
         <div id="pokeList" class="row"></div>
         <!-- Div nueva con los cards
         <div id="result" class="row"></div> -->
       </div>
-    </article>
-  
-    <footer class="copyright">
+  </section>
+    <footer>
           <div><p>&copy; Copyright 2019</p></div>
           <div class="social-icons">
-              <p>Siganos</p>
-              <a href="index.html"><img src="https://image.flaticon.com/icons/svg/1051/1051309.svg"></a>
-              <a href="index.html"><img src="https://image.flaticon.com/icons/svg/1051/1051313.svg"></a>
+          <div class="social-icons img">
+              <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="face-logo.png" height="50px"></a>
             </div>
+            <div class="social-icons img">
+              <a href="https://www.instagram.com/pokemongochileoficial/"><img src="insta-logo.png" height="50px"></a>
+            </div>
+          </div>
     </footer>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>

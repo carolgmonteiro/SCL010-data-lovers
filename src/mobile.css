@@ -1,8 +1,44 @@
 /* hacer responsivo */
 @media (max-width: 450px){
+    html, body {
+        margin: 0px;
+        padding: 0px;
+    }
     .nav_options{
         display: none;
     }
+    nav{
+        background-color: #E71D23;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 80%;
+    }
+    .search-box {
+       max-width: 80%;
+     }
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .headerInfo{
+        max-width: 80%;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contOptionPoketLeft{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contOptionPoketRight{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
 
 @media (min-width: 425px ) and (max-width: 768px){
