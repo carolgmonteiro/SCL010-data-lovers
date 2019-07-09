@@ -1,10 +1,9 @@
-
-window.data = {
-  filterPokemon: (data, condition) => {
-  if(["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"].includes(condition)){
-    return data.filter(data => data.type[0] === condition || data.type[1] === condition)
-  } else { 
-    return data.filter(data => data.name === condition || data.id === parseInt(condition));
+window.dataPokemon = {
+  filterData: (data, condition) => {
+    for (let i = 0; i < data.length; i++){
+      if((data[i].type).includes(condition)){
+        return data.filter(element => element.type[0] === condition || element.type[1] === condition);
+      }
+    }
   }
-}
-}
+};
