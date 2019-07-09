@@ -103,6 +103,8 @@ require('./data.spec.js');
 //   }]
 // }];
 
+const sample = [{"id": 1,"name": "Bulbasaur","type": ["Grass"],"weaknesses": ["Fire"]}, {"id": 150,"name": "Mewtwo","type": ["Psychic"],"weaknesses": ["Bug","Ghost","Dark"]}];
+
 describe('dataPokemon', () => {
   
   it('debería ser un objeto', () => {
@@ -115,4 +117,16 @@ describe('filterData', () => {
   it('debería ser una function', () => {
     assert.equal(typeof window.dataPokemon.filterData, 'function');
   });
+  it('debería retornar el objeto Bulbasaur al filtrar por el tipo Grass', () => {
+    assert.deepEqual(window.dataPokemon.filterData(sample, "Grass"), [{"id": 1,"name": "Bulbasaur","type":["Grass"],"weaknesses": ["Fire"]}]);
+  });
+  it('debería retornar el objeto Bulbasaur al filtrar por la debilidad Fire', () => {
+    assert.deepEqual(window.dataPokemon.filterData(sample, "Fire"), [{"id": 1,"name": "Bulbasaur","type":["Grass"],"weaknesses": ["Fire"]}]);
+  });
 }); 
+
+// describe('filterData', () => {
+//   it('debería retornar el objeto Bulbasaur al filtrar por el tipo Grass', () => {
+//     assert.deepEqual(window.dataPokemon.filterData(sample, "Grass"), [{"name": "Bulbasaur","type":["Grass"]}]);
+//   });
+// }); 

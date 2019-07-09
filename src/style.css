@@ -199,9 +199,14 @@ input{
     text-align: center;
     justify-content :right;
     outline: none;
-    padding: 5px;
+    padding: 7px;
     width: 200px;
     justify-content: center;
+ }
+ .btnSearch{
+     background-color: white;
+     border: none;
+     outline: none;
  }
 
 .card {
