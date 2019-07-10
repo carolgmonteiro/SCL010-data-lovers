@@ -67,19 +67,14 @@ input{
 }
 .home{
     color: #333333;
-    /* background: #C5DAEA; */
-    /* font-size: 15px; */
-    /* padding-left: 100px;
-    padding-right: 100px; */
     padding-bottom: 50px;
     height: auto;
     display: flex;
     justify-content: center;
-    /* width: 500px; */
     flex-wrap: wrap;
 }
 .titleOptionHome{
-    font-size: 50px;
+    font-size: 55px;
     color:#333333;
 }
 .InfoHome{
@@ -154,7 +149,59 @@ input{
     height: 200px ;
     min-width: 80%;
   }
-
+.titleOptionGo{
+    font-size: 60px;
+    color: #333333;
+}
+.infoPokeGo{
+    font-size: 30px;
+    color:#333333;
+}
+.poketGoInfos{
+    padding-top: 20px;
+    color: #333333;
+    padding-right: 400px;
+    padding-left: 400px;
+    padding-bottom: 20px;
+    font-family: sans-serif;
+    text-align: justify;
+}
+.headerPokeGo{
+    background: #C5DAEA;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 400px;
+    padding-left: 400px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.7);
+}
+.video{
+    width: 100%;
+    height: 100%;
+    /* position: absolute!important; */
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.buttonBack{
+    font-family: monospace;
+    font-size: 20px;
+    background: transparent;
+    color: #333333;
+    cursor: pointer;
+    border-radius: 10px;  
+    border: none;
+    outline: none;
+    width: 100px;
+    float: right;
+    height: 70px;
+    box-sizing: content-box
+}
 #btnPoketGo{
     font-family: sans-serif;
     font-size: 25px;
@@ -203,16 +250,29 @@ input{
     width: 200px;
     justify-content: center;
  }
- .btnSearch{
+ /* .btnSearch{
      background-color: white;
      border: none;
      outline: none;
+ } */
+
+ .pokeStats{
+    font-family: sans-serif;
+    font-size: 25px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
  }
 
 .card {
     color: #333333;
     width: 260px;
-    height: 260px;
+    height: 300px;
     margin: 20px;
     text-align: center;
     background-color: #fff;
@@ -231,18 +291,19 @@ input{
 }
 .card img {
     /* width: 100px; */
-    height: 150px;
+    height: 100px;
     align-self: center;
     /* margin: 1em;
     padding: 0px; */
   }
 .card-body{
-    width: 200px;
+    width: 210px;
     height: 130px; 
     padding: 0px;
   }
 .card-text{
-    text-align: center; 
+    text-align: center;
+
 }
 .row {
     /* margin-left: 150px; */

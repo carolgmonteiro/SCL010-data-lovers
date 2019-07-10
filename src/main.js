@@ -9,22 +9,35 @@ let cardGallery = "";
 //let showModal = "";
 // const contPokeGallery = document.getElementById("pokeGallery");
 // const contPokeList =document.getElementById("pokeList");
-const pokeResult =document.getElementById("pokeList");
+const pokeResult = document.getElementById("pokeList");
+const pokeStatsResult = document.getElementById("pokeStats");
 
  //Crear Elementos Galería
  const showGallery = (pokeData) => {
   for (let i = 0; i < pokeData.length; i++){
     cardGallery +=
     //onclick="showModal(${data[i].id})"
-     `<div class="card" style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" >
+     `<div class="card" style="width: 210px;" data-toggle="modal">
     <h3 class="card-title">${pokeData[i].num} ${pokeData[i].name}</h3>
      <img class="card-img-top" src=${pokeData[i].img} alt="Card image cap">
   <div class="card-body">
-    <p class="card-text">${pokeData[i].type}</p>
+    <p class="card-text">Tipo: ${pokeData[i].type}</p>
+    <p class="card-text">Debilidad: ${pokeData[i].weaknesses}</p>
+    <p class="card-text">Horario: ${pokeData[i].spawn_time}</p>
   </div>
 </div>`
   } pokeResult.innerHTML = cardGallery;
   };
+
+// //funcion para imprimir la data de estadísticas
+//   const showStats = (pokeData) => {
+//     for (let i = 0; i < pokeData.length; i++){
+//       infoStats +=
+//        `<div class="pokeStats">
+//       <h3 class="card-title">Los Pokemones de tipo ${pokeData[i].type} representan </h3>
+//     </div>`
+//     } pokeStatsResult.innerHTML = infoStats;
+//     };
   
 //Mostrar cards en orden aleatorio
 const randomData = (pokeData)=>{
@@ -35,13 +48,17 @@ showGallery(randomData(pokeData));
 //Filtro por Tipo 
 document.getElementById("slctFilterType").addEventListener ("change", ( ) => {
   cardGallery ="";
+  pokeStatsResult.innerHTML = "";
   searchPokemon = document.getElementById("slctFilterType").options[document.getElementById("slctFilterType").selectedIndex].value;
+  //Imprimir la estadistica por tipo
+  pokeStatsResult.innerHTML = window.dataPokemon.computeStats(pokeData, searchPokemon);
   //Imprimir el resultado por tipo
   showGallery(window.dataPokemon.filterData(pokeData, searchPokemon));
 });
 //Filtro por Debilidad
 document.getElementById("slctFilterWeaknesses").addEventListener ("change", ( ) => {
   cardGallery ="";
+  pokeStatsResult.innerHTML = "";
   //Guardar la selección del usuario
   searchPokemon = document.getElementById("slctFilterWeaknesses").options[document.getElementById("slctFilterWeaknesses").selectedIndex].value;
   //Imprimir el resultado por debilidad
@@ -51,6 +68,7 @@ document.getElementById("slctFilterWeaknesses").addEventListener ("change", ( ) 
 //FILTRO POR TIPO Y ORDEN
 document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
   cardGallery ="";
+  pokeStatsResult.innerHTML = "";
   //Guardar la selección del usuario
   orderValue = document.getElementById("slctFilterOrder").value;
 if (orderValue == "AZ") {
@@ -64,15 +82,26 @@ if (orderValue == "AZ") {
 }
 });
 
+document.getElementById("btnPoketGo").addEventListener ("click", ( ) => {
+  cardGallery ="";
+  pokeStatsResult.innerHTML = "";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("headerInfo").style.display = "none";
+  document.getElementById("allPokemons").style.display = "none";
+  document.getElementById("poketGo").style.display = "block";
+});
 
-// //Buscador
-// document.getElementById("slctFilterWeaknesses").addEventListener ("change", ( ) => {
-//   cardGallery ="";
-//   //Guardar la selección del usuario
-//   searchPokemon = document.getElementById("slctFilterWeaknesses").options[document.getElementById("slctFilterWeaknesses").selectedIndex].value;
+document.getElementById("btnBackHome").addEventListener ("click", ( ) => {
+  cardGallery ="";
+  pokeStatsResult.innerHTML = "";
+  document.getElementById("home").style.display = "block";
+  document.getElementById("headerInfo").style.display = "block";
+  document.getElementById("allPokemons").style.display = "block";
+  document.getElementById("poketGo").style.display = "none";
+});
 
-// showGallery(window.dataPokemon.filterData(pokeData, searchPokemon));
-// });
+
+
 
 // //Orden de 151-1
 //   if(ordenValue === "151-1"){

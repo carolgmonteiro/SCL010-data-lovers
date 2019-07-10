@@ -30,7 +30,14 @@ window.dataPokemon = {
       return sorted;
     }
   },
-}
+  computeStats: (data, condition) => {
+    for (let i = 0; i < data.length; i++){
+    let result = data.filter(element => element.type[0] === condition || element.type[1] === condition);
+    return "Los Pokemones deste tipo representan " + Math.round((result.length*100) / data.length)+"% de todos los de la Generación Kanto";
+  }
+  }
+};
+
 
 //   sortData: (data, sortBy, sortedOrder) => {
 //     let result = data.sort((a,b) => a[sortBy].localeCompare(b[sortBy]));
