@@ -199,6 +199,8 @@ a:-webkit-any-link {
     outline: none;
     width: 100px;
     float: right;
+    display: flex;
+    flex-wrap: wrap;
     height: 70px;
     box-sizing: content-box
 }
@@ -326,7 +328,7 @@ footer{
     height: 70px;
     background: #333333;
     color: #fff;
-    /* width: 100%; */
+    width: 100%; 
     box-sizing: border-box;
 }
 

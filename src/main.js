@@ -5,14 +5,9 @@ let searchPokemon;
 let orderValue;
 //variable para impression de los pokemones
 let cardGallery = ""; 
-//container pop up 
-//let showModal = "";
-// const contPokeGallery = document.getElementById("pokeGallery");
-// const contPokeList =document.getElementById("pokeList");
 const pokeResult = document.getElementById("pokeList");
 const pokeStatsResult = document.getElementById("pokeStats");
-
- //Crear Elementos Galería
+ //Imprimir Elementos de la Galería Pokemones
  const showGallery = (pokeData) => {
   for (let i = 0; i < pokeData.length; i++){
     cardGallery +=
@@ -23,28 +18,16 @@ const pokeStatsResult = document.getElementById("pokeStats");
   <div class="card-body">
     <p class="card-text">Tipo: ${pokeData[i].type}</p>
     <p class="card-text">Debilidad: ${pokeData[i].weaknesses}</p>
-    <p class="card-text">Horario: ${pokeData[i].spawn_time}</p>
+    <p class="card-text">Freq. horária: ${pokeData[i].spawn_time}hrs</p>
   </div>
 </div>`
   } pokeResult.innerHTML = cardGallery;
   };
-
-// //funcion para imprimir la data de estadísticas
-//   const showStats = (pokeData) => {
-//     for (let i = 0; i < pokeData.length; i++){
-//       infoStats +=
-//        `<div class="pokeStats">
-//       <h3 class="card-title">Los Pokemones de tipo ${pokeData[i].type} representan </h3>
-//     </div>`
-//     } pokeStatsResult.innerHTML = infoStats;
-//     };
-  
 //Mostrar cards en orden aleatorio
 const randomData = (pokeData)=>{
   return pokeData.sort(() => Math.random() - 0.5)
 };
 showGallery(randomData(pokeData));
-
 //Filtro por Tipo 
 document.getElementById("slctFilterType").addEventListener ("change", ( ) => {
   cardGallery ="";
@@ -64,8 +47,7 @@ document.getElementById("slctFilterWeaknesses").addEventListener ("change", ( ) 
   //Imprimir el resultado por debilidad
   showGallery(window.dataPokemon.filterData(pokeData, searchPokemon));
 });
-
-//FILTRO POR TIPO Y ORDEN
+//FILTRO ORDEN
 document.getElementById("slctFilterOrder").addEventListener ("input", ( ) => {
   cardGallery ="";
   pokeStatsResult.innerHTML = "";
@@ -81,7 +63,7 @@ if (orderValue == "AZ") {
   showGallery(window.dataPokemon.sortData(pokeData, "number", "descendente"));
 }
 });
-
+//Home para PoketGo
 document.getElementById("btnPoketGo").addEventListener ("click", ( ) => {
   cardGallery ="";
   pokeStatsResult.innerHTML = "";
@@ -90,7 +72,7 @@ document.getElementById("btnPoketGo").addEventListener ("click", ( ) => {
   document.getElementById("allPokemons").style.display = "none";
   document.getElementById("poketGo").style.display = "block";
 });
-
+//PoketGo Home
 document.getElementById("btnBackHome").addEventListener ("click", ( ) => {
   cardGallery ="";
   pokeStatsResult.innerHTML = "";
@@ -99,10 +81,15 @@ document.getElementById("btnBackHome").addEventListener ("click", ( ) => {
   document.getElementById("allPokemons").style.display = "block";
   document.getElementById("poketGo").style.display = "none";
 });
-
-
-
-
+//PoketGo Home (down)
+document.getElementById("btnBackHome1").addEventListener ("click", ( ) => {
+  cardGallery ="";
+  pokeStatsResult.innerHTML = "";
+  document.getElementById("home").style.display = "block";
+  document.getElementById("headerInfo").style.display = "block";
+  document.getElementById("allPokemons").style.display = "block";
+  document.getElementById("poketGo").style.display = "none";
+});
 // //Orden de 151-1
 //   if(ordenValue === "151-1"){
 //   let sortNumDesc = pokeData.sort(function(a,b){

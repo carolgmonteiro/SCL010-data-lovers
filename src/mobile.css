@@ -45,4 +45,11 @@
     nav li a{
         color: black;
     }
+    .home{
+        flex-direction: column;
+    }
+    .contOptionPoketLeft{
+        flex-direction: column;
+    }
+
 }
