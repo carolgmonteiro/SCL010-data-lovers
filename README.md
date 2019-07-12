@@ -1,8 +1,6 @@
-
 <a  href="https://carolgmonteiro.github.io/SCL010-data-lovers/src/index.html"><img  src="https://i.ibb.co/YDTS0JQ/logo-poket-Mon-r01-02-07.png" alt="logo-poket-Mon-r01-02-07" border="0"></a>
 
 <a href="https://ibb.co/DwDNqtB"><img src="https://i.ibb.co/j3vdpTC/PokeTGo.png" alt="PokeTGo" border="0"></a>
-
 
 ## **Índice**
 *  [1. Resumen del proyecto](#resumen-del-proyecto)
@@ -14,7 +12,7 @@
     *  [4.3. Historias de usuario](#historias-de-usuario)
 *  [5. Proceso Diseño de la Interfaz de Usuario](#proceso-diseno-de-la-interfaz-de-usuario)
     *  [5.1. Diagrama de flujo](#diagrama-de-flujo)
-    *  [5.2. Prototipo de baja y média fidelidad](#prototipo-de-baja-y-media-fidelidad)
+    *  [5.2. Prototipo de baja y media fidelidad](#prototipo-de-baja-y-media-fidelidad)
     *  [5.3. Test de usuario](#test-de-usuario)
     *  [5.4. Prototipo de alta fidelidad](#prototipo-de-alta-fidelidad)
     *  [5.5. Decisiones de diseño](#decisiones-de-diseno)
@@ -35,7 +33,7 @@ Una vez definida el área de interés se debe determinar quien es el usuario, y 
 
 Como entregable final se pide una página web que permita visualizar la data, filtrarla, ordenarla y hacer algún cálculo agregado.
 
-El plazo de proyecto fue de 3 semanas.
+El plazo del proyecto fue de 3 semanas.
 
 ## **2. PoketMon - Resumen del producto**
 
@@ -43,13 +41,13 @@ El plazo de proyecto fue de 3 semanas.
 
 En esta plataforma puedes filtrar los pokemones por tipo, saber sus debilidades, y obtener otro tipo de información más básica como nombres y números de la pokedéx. 
 
-Además el jugador inicial puede acceder a otras informaciones sobre el juego en +PoketGo, un Guía sobre el juego Pokemon Go que muestra tips para los combates, los tipos de pokemones y links para otros sitios interesantes para se conectar con otros jugadores.
+Además el jugador principiante puede acceder a otras informaciones sobre el juego en +PoketGo, una mini guía sobre el juego Pokemon Go que muestra tips para los combates, los tipos de pokemones y links de otros sitios interesantes para conectarse con otros jugadores.
 
 <a href="https://ibb.co/mFqnGSh"><img src="https://i.ibb.co/4gTb7J4/1-Poketmon-Home.png" alt="1-Poketmon-Home" border="0"></a>
 
 ## **3. Planificación**
 
-- En la planificación cronológica de nuestro proyecto utilizando el método "Kaban", ordenado a partir del Readme del proyecto presentado. Fue actualizado diariamente, armazenando los materiales producidos por el equipo, sitios referentes, materiales para estudio. se encuentra registrada en Trello, el cuál puedes revisar haciendo click aquí: [Trello Poketmon](https://trello.com/b/CZnczp1y/laboratoria-dl-pokemon).
+- En la planificación cronológica de nuestro proyecto utilizamos el método "Kaban", ordenado las tareas a realizar a partir del Readme del proyecto presentado. Fue actualizado diariamente, almacenando los materiales producidos por el equipo, sitios referentes y material de estudio. Todo este registro se encuentra en Trello, el cuál puedes revisar haciendo click aquí: [Trello Poketmon](https://trello.com/b/CZnczp1y/laboratoria-dl-pokemon).
 
 <a href="https://ibb.co/42ggp4V"><img src="https://i.ibb.co/ypBBqgQ/2-Planificacion-en-Trello.png" alt="2-Planificacion-en-Trello" border="0"></a>
 
@@ -58,18 +56,18 @@ Además el jugador inicial puede acceder a otras informaciones sobre el juego en
 
 ### **4.1. Definición de usuario**
 
-Nuestros Usuarios son jugadores iniciales de pokémon Go, que requieren de cierta información para optimizar su experiencia como jugador y poder encontrar algún pokemon en particular.
+Nuestros Usuarios son jugadores iniciales de pokémon Go, que requieren de cierta información para optimizar su experiencia como jugador y poder encontrar con mayor facilidad algún pokemon en particular.
   ***
 
 ### **4.2. Encuesta On line**
 
-Realizamos una encuesta a través de un sitio on line, y fue respondida por un total de 32 personas. Los principales datos obtenidos fueron los siguientes:
+Realizamos una encuesta a través de un sitio on-line, y fue respondida por un total de 32 personas. Los principales datos obtenidos fueron los siguientes:
 
 <a href="https://ibb.co/hFQtvtp"><img src="https://i.ibb.co/m5ZM7MQ/3-Graficos-encuesta-01.png" alt="3-Graficos-encuesta-01" border="0"></a>
 
 <a href="https://ibb.co/2K74qSx"><img src="https://i.ibb.co/VBW4VxR/4-Graficos-encuesta-01.png" alt="4-Graficos-encuesta-01" border="0"></a>
-- El 64.5% de los encuestados considera que el dato más relevante para ellos es buscar los pokemones por tipo. El segundo dato de más valor para los usuarios son las fortalezas y debilidades de cada pokemon.
-- El 53.3% revela entrar a algún sitio con información sobre pokémon para obtener información sobre algún pokémon en particular.
+- El 64.5% de los encuestados considera que el dato más relevante para ellos, es buscar los pokemones por tipo. El segundo dato de mayor valor para los usuarios son las fortalezas y debilidades de cada pokemon.
+- El 53.3% revela entrar a algún sitio con información sobre pokémon, para obtener información sobre algún pokémon en particular.
 - Al 86.2% de los encuestados le gustaría buscar información adicional de pokémon en alguna aplicación o sitio web.
 - 36.7% de los jugadores se considera jugador inicial.
 - El 71% son jugadores ocasionales.
@@ -81,7 +79,7 @@ Realizamos una encuesta a través de un sitio on line, y fue respondida por un t
 <a href="https://ibb.co/x6fLnXq"><img src="https://i.ibb.co/w4wgnBh/5-Historia-de-Usuario.png" alt="5-Historia-de-Usuario" border="0"></a>
 
 -  **HU02** - **YO COMO** jugador principiante de pokemon go, **QUIERO** poder ordenar la lista de pokemones alfabéticamente y por número de la pokedex, **PARA** encontrar el personaje que busco con mayor rapidez.
--  **HU03**- **YO COMO** jugador intermédio de Pokémon Go, quiero buscar características como debilidades **PARA** vencer una lucha en Pokemón Go.
+-  **HU03**- **YO COMO** jugador intermedio de Pokémon Go, quiero conocer las debilidades de cada pokemon**PARA** saber cuál utilizar y lograr vencer en una batalla.
 -  **HU04** - **YO COMO** usuario intermedio **QUIERO** saber cuál es el porcentaje de pokemones que hay por tipo, **PARA** tener una idea de que probabilidades tengo de encontrarlo en estado salvaje.
 
 ***
@@ -108,7 +106,7 @@ Nuestro prototipo de baja fidelidad, es una representación gráfica simple de l
 <a href="https://ibb.co/5MqCnfP"><img src="https://i.ibb.co/p0CNR9S/7-Prototipo-Baja-Fidelidad.png" alt="7-Prototipo-Baja-Fidelidad" border="0"></a>
 
   
-Fue más desarrollado en Balsamiq configurando en un prototipo de média fidelidad, que fue testeado:
+Fue más desarrollado en Balsamiq creando en un prototipo de media fidelidad, el cuál fue testeado:
 
 <a href="https://ibb.co/237z7y9"><img src="https://i.ibb.co/F4bQbKr/8-Prototipo-Media-Fidelidad.png" alt="8-Prototipo-Media-Fidelidad" border="0"></a>
 
@@ -117,15 +115,15 @@ Fue más desarrollado en Balsamiq configurando en un prototipo de média fidelid
 
 Hicimos las pruebas (utilizando Loom) con 5 usuarios (grabamos 4) utilizando el prototipo hecho en Balsamiq. Evaluamos los seguientes puntos:
 
-- Percepcion de los colores y fuentes: preguntamos que sensación los colores les causaba.
+- Percepcion de los colores y fuentes: preguntamos que sensación le causaban los colores causaba.
 
-- Se el diseño de interfaz está intuitivo: Fue propuesto el recorrido de la historia del usuario - ingresando en al pagina,para que filtrara los pokemones que tuvieran la debilidad de Agua y ingresar en el card.
+- Si el diseño de la interfaz le parece intuitivo: Fue propuesto el recorrido de la historia del usuario - ingresando en al página, para que filtrara los pokemones que tuvieran la debilidad de Agua e ingresar en el card.
 
-- Evaluar si las informaciones del cards son interesantes y atenden al usuario.
+- Evaluar si la información del card es interesante y cumplen con las necesidades al usuario.
 
-- Si estaba intuitivo volver a la pantalla principal, o recorrer a la galeria de pokemones.
+- Si es intuitiva la manera de volver a la pantalla principal, o recorrer la galería de pokemones.
 
-Siguen los links de los tests:
+A continuación se encuentran los links de los tests:
 
 <a href="https://ibb.co/PNTvypk"><img src="https://i.ibb.co/G0s4Dwm/9-Test-con-usuario-con-Loom-y-Balsamiq.png" alt="9-Test-con-usuario-con-Loom-y-Balsamiq" border="0"></a>
 
@@ -137,12 +135,11 @@ Siguen los links de los tests:
 
 - Link para [Test 04](https://www.loom.com/share/8e5339b590b541008a088dd1dfa1c5d8)
 
-
 Recibimos algunos feedbacks, con los que decidimos hacer los siguientes cambios al diseño:
 
 - Sacar pantalla input donde el usuario debía ingresar su nombre de entrenador, porque no íbamos a tener un registro de esto, y no cumplía realmente con alguna función de utilidad.
 
-- Simplificar pantalla “Home”.
+- Simplificar la pantalla “Home”.
 
 - Eliminar opción para ver gráfico de datos en pantalla “Home”.
 
@@ -152,7 +149,8 @@ Recibimos algunos feedbacks, con los que decidimos hacer los siguientes cambios 
 
 ### **5.4. Prototipo de alta fidelidad**
 
-Después de realizar un estudio de “benchmark” consultando a los potenciales usuarios sobre cuáles son los principales sitios y/o aplicaciones que utilizan para obtener información de pokemon Go, tomamos como referentes las páginas que ellos nos mencionaron para armar nuestro sitio. Los sitios que visitamos sobre el tema, tenian un design entretenido pero cargado de informaciones, lo que encuentramos excessivo para el usuario, que queda un poco perdido en medio a tantas informaciones. Además todos tenian colores fuertes:
+Después de realizar un estudio de “benchmark” consultando a los potenciales usuarios sobre cuáles son los principales sitios y/o aplicaciones que utilizan para obtener información de pokemon Go, tomamos como referentes las páginas que ellos nos mencionaron para armar nuestro sitio. 
+Los sitios que visitamos sobre el tema, tenian un diseño entretenido pero cargado de información, lo que encontramos excesivo para el usuario. Además todos utilizaban colores muy fuertes:
 
 <a href="https://ibb.co/8DdgWcF"><img src="https://i.ibb.co/N6m28Sw/11-Estudio-de-Benchmark.png" alt="11-Estudio-de-Benchmark" border="0"></a>
 
@@ -160,18 +158,18 @@ Después de realizar un estudio de “benchmark” consultando a los potenciales
   
 Los sitios que usamos finalmente como referencia fueron los siguientes:
 
--  [Pokemon Go](https://www.pokemon.com/es/pokedex/) Página oficial del juego (nos basamos específicamente en el sitio “pokedex” que se encuentra dentro de la página).
+-  [Pokemon Go](https://www.pokemon.com/es/pokedex/) Página oficial del juego (nos basámos específicamente en el sitio “pokedex” que se encuentra dentro de la página).
 -  [Pokémon Go info](https://pokemon.gameinfo.io/pt-br/tools/iv-calculator) Dentro de este sitio web se encuentra una aplicación llamada IV calculator. Esta utilidad calcula el potencial que tiene un pokémon específico para enfrentar un combate. Solo nos pide proporcionar los datos de PC (Puntos de combate), PS (Puntos de salud) y cantidad de polvos estelares que requiere para aumentar su PC.
 -  [Poke Genie](https://andro4all.com/2018/07/iv-pokemon-go-que-es) Aplicación IV calculator disponible en Google play.
 Básicamente calculadora de los “valores individuales” (ataque, defensa y salud) de los pokemones. Información de alta utilidad a la hora de elegir que pokémon utilizar en incursiones y combates en gimnasios.
 
-### **5.5. Decisiones de diseño**
+### **5.5. Decisión de diseño**
 
-Cómo decision principal de diseño, piensamos en traer la identidad de una Pokedex de la serie, eligindo colores similares como rojo, azul y gris, sumado al estilo "mangá" que utilizamos en los iconos y imagenes de nuestro sítio. optamos por un design minimalista enfocado en el juego Pokemon Go.
+Como decisión final del diseño, quisimos basárnos en la Pokedex original de la serie, eligiendo colores similares como rojo, azul y gris (en tonalidades más suaves), sumado al estilo "manga" que utilizamos en los íconos e imagenes de nuestro sítio. Optamos por un diseño minimalista enfocado en el juego Pokemon Go.
 
 <a href="https://ibb.co/djsq2Gn"><img src="https://i.ibb.co/gmbpTzs/13-Estudio-de-colores-y-fuente.png" alt="13-Estudio-de-colores-y-fuente" border="0"></a>
 
-Acá pueden ver el prototipo realizado en figma dónde analizamos [el proyecto en Zeplin](https://zpl.io/bJGBw83):
+Acá pueden ver el prototipo realizado en figma [el proyecto en Zeplin](https://zpl.io/bJGBw83):
 
 <a href="https://ibb.co/CMWJPVW"><img src="https://i.ibb.co/yYVh4gV/14-Prototipo-de-Alta-Fidelidad-Mobile.png" alt="14-Prototipo-de-Alta-Fidelidad-Mobile" border="0"></a>
 
@@ -195,12 +193,12 @@ Nos suguieren añadir lo siguiente:
 - Cruzar datos entre filtros.
 - Asignarle a los card un modal, para mostrar más información.
 - Incluir un botón para volver a arriba automáticamente.
-- Incluir un Campo de Búsqueda
+- Incluir un Campo de Búsqueda. 
   
 ***
 ### **5.7. Interfaz final**
 
-la interfaz final quedó similar al prototipo de alta fidelidad del desktop, cambiando apenas algunos pocos detalles, cómo por ejemplo la localización de los links de las reds sociales y el buscador. Todavia el sitio no está responsivo para mobile, que és una de la mejorias a seren hechas.
+la interfaz final quedó similar al prototipo de alta fidelidad, variando en algunos detalles muy pequeños, cómo por ejemplo la localización de los links de las redes sociales y el buscador. El sitio todavía no es responsivo para mobile, lo cuál es una de las mejoras que pretendemos hacer.
 
 <a href="https://ibb.co/QdKGbRW"><img src="https://i.ibb.co/GT5jxLZ/17-Pagina-Home.png" alt="17-Pagina-Home" border="0"></a>
 
@@ -213,10 +211,10 @@ la interfaz final quedó similar al prototipo de alta fidelidad del desktop, cam
 
 El _boilerplate_ de este proyecto incluye pruebas unitarias:
 _procesar_, _filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas. Para ello implementamos las siguientes funciones en el archivo`src/data.js`:
--  `filterData(data, condition)`: esta función `filter` o filtrar recibiría la data, y nos retornaría aquellos datos que sí cumplan con la condición.
+-  `filterData(data, condition)`: esta función `filter` o filtrar recibe la data, y nos debe retornar aquellos datos que sí cumplan con la condición.
 -  `sortData(data, sortBy, sortOrder)`: esta función `sort` u ordenar recibe tres parámetros. El primer parámetro, `data`, nos entrega los datos. El segundo parámetro, `sortBy`, nos dice con respecto a cuál de los campos de la data se quiere ordenar. El tercer parámetro, `sortOrder`, indica si se quiere ordenar de manera ascendente o descendente.
 -  `computeStats(data)`: la función `compute` o calcular, nos permitirá hacer cálculos estadísticos básicos para ser mostrados de acuerdo a la data proporcionada.
-Fueron realizados las pruebas, para las 3 funciones requeridas en el proyecto. Los resultados de las pruebas unitarias:
+Fueron realizadas las pruebas para las 3 funciones requeridas en el proyecto. Los resultados de las pruebas unitarias son los siguientes:
 
 <a href="https://ibb.co/1n6GzFh"><img src="https://i.ibb.co/YWZB0HY/20-Pruebas-unit-rias.png" alt="20-Pruebas-unit-rias" border="0"></a>
 
@@ -253,7 +251,7 @@ Fueron realizados las pruebas, para las 3 funciones requeridas en el proyecto. L
 
 Nuestro proyecto cumple con los requisitos solicitados. La investigación y realización del proyecto en ningún momento pierde como foco las necesidades y opiniones del usuario, el cuál es un jugador principiante a intermedio, que necesita cierta información sobre los pokemones.
 
-Optamos por armar un sitio minimalista y de búsqueda rápida con información centrada solo en el juego y no en toda el universo pokémon como lo hacen la mayoría de los sitios similares, pero que contenga las herramientas necesarias para conectar a los usuarios con sitios que proporcionan mayor información.
+Optamos por armar un sitio minimalista y de búsqueda rápida con información centrada solo en el juego y no en todo el universo pokémon como lo hacen la mayoría de los sitios similares, pero que contenga las herramientas necesarias para conectar a los usuarios con sitios que proporcionan mayor información.
 
 Pensamos que aún podemos añadir algunas mejoras a nuestro proyecto como:
 
@@ -261,7 +259,7 @@ Pensamos que aún podemos añadir algunas mejoras a nuestro proyecto como:
 - Añadir más información a través del modal.
 - Herramienta de búsqueda por texto.
 - Hacerlo Responsivo.
-- Cruce de datos.
+- Cruce de datos entre filtros y orden.
 - Añadir filtros de aparición por horario.
 - Añadir una función para cargar contenidos por parte.
 ***
