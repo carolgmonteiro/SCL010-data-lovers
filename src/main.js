@@ -1,5 +1,12 @@
-//criar variable para linkear la con la data Pokemon
-const pokeData = window.POKEMON.pokemon;
+//Buscar la data en la internet
+fetch('https://raw.githubusercontent.com/carolgmonteiro/SCL010-data-lovers/master/src/data/pokemon/pokemon.json')
+      .then(response => 
+       response.json())
+      .then(data => {
+//criar variable para linkear la con la data Pokemon en JS
+//const pokeData = window.POKEMON.pokemon;
+//criar variable para linkear la con la data Pokemon en JASON
+const pokeData = data.pokemon;
 // variable para la busqueda de pokemon o condicion
 let searchPokemon;
 let orderValue;
@@ -7,25 +14,25 @@ let orderValue;
 let cardGallery = ""; 
 const pokeResult = document.getElementById("pokeList");
 const pokeStatsResult = document.getElementById("pokeStats");
- //Imprimir Elementos de la Galería Pokemones
- const showGallery = (pokeData) => {
-  for (let i = 0; i < pokeData.length; i++){
+//Imprimir Elementos de la Galería Pokemones
+ const showGallery = (data) => {
+  for (let i = 0; i < data.length; i++){
     cardGallery +=
     //onclick="showModal(${data[i].id})"
      `<div class="card" style="width: 210px;" data-toggle="modal">
-    <h3 class="card-title">${pokeData[i].num} ${pokeData[i].name}</h3>
-     <img class="card-img-top" src=${pokeData[i].img} alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Tipo: ${pokeData[i].type}</p>
-    <p class="card-text">Debilidad: ${pokeData[i].weaknesses}</p>
-    <p class="card-text">Freq. horária: ${pokeData[i].spawn_time}hrs</p>
-  </div>
-</div>`
-  } pokeResult.innerHTML = cardGallery;
+     <h3 class="card-title">${data[i].num} ${data[i].name}</h3>
+     <img class="card-img-top" src=${data[i].img} alt="Card image cap">
+     <div class="card-body">
+     <p class="card-text">Tipo: ${data[i].type}</p>
+     <p class="card-text">Debilidad: ${data[i].weaknesses}</p>
+     <p class="card-text">Freq. horária: ${data[i].spawn_time}hrs</p>
+     </div>
+     </div>`
+    } pokeResult.innerHTML = cardGallery;
   };
 //Mostrar cards en orden aleatorio
-const randomData = (pokeData)=>{
-  return pokeData.sort(() => Math.random() - 0.5)
+const randomData = (data)=>{
+  return data.sort(() => Math.random() - 0.5)
 };
 showGallery(randomData(pokeData));
 //Filtro por Tipo 
@@ -90,91 +97,5 @@ document.getElementById("btnBackHome1").addEventListener ("click", ( ) => {
   document.getElementById("allPokemons").style.display = "block";
   document.getElementById("poketGo").style.display = "none";
 });
-// //Orden de 151-1
-//   if(ordenValue === "151-1"){
-//   let sortNumDesc = pokeData.sort(function(a,b){
-//               if (a.id < b.id) {
-//                   return 1;
-//              }else{
-//              return -1;
-//           }
-//          });
-//           // console.log(sortNumDesc);
-//  for(let i = 0 ; i < sortNumDesc.length ; i++){
-//   pokeResult.innerHTML +=
-//   `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter">
-//  <h3 class="card-title">${sortNumDesc[i].num} ${sortNumDesc[i].name}</h3>
-//   <img class="card-img-top" src=${sortNumDesc[i].img} alt="Card image cap">
-// <div class="card-body">
-//  <p class="card-text">${sortNumDesc[i].type}</p>
-// </div>
-// </div>`
-// }
-//   }
-// //Orden de 1-151
-//    if(ordenValue === "1-151"){
-//       let sortNumAsc = pokeData.sort(function(a,b){
-//                   if (a.id > b.id) {
-//                       return 1;
-//                  }else{
-//                  return -1;
-//               }
-//              });
-//               // console.log(sortNumAsc);
-//      for(let i = 0 ; i < sortNumAsc.length ; i++){
-//       pokeResult.innerHTML +=
-//       `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter">
-//      <h3 class="card-title">${sortNumAsc[i].num} ${sortNumAsc[i].name}</h3>
-//       <img class="card-img-top" src=${sortNumAsc[i].img} alt="Card image cap">
-//     <div class="card-body">
-//      <p class="card-text">${sortNumAsc[i].type}</p>
-//     </div>
-//     </div>`
-//     }
 
-    
-//       }
-// //Orden de A-Z
-// if (ordenValue === "A-Z"){
-//   let sortNameAz  = pokeData.sort(function(a,b){
-//               if (a.name > b.name) {
-//                   return 1;
-//              }else{
-//              return -1;
-//           }
-//          });
-//           // console.log(sortNameAz);
-//  for(let i = 0 ; i < sortNameAz.length ; i++){
-//   pokeResult.innerHTML +=
-//   `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter">
-//  <h3 class="card-title">${sortNameAz[i].num} ${sortNameAz[i].name}</h3>
-//   <img class="card-img-top" src=${sortNameAz[i].img} alt="Card image cap">
-// <div class="card-body">
-//  <p class="card-text">${sortNameAz[i].type}</p>
-// </div>
-// </div>`
-// }
-//   }
-// //Orden de Z-A
-// if(ordenValue === "Z-A"){
-//   let sortNameZa  = pokeData.sort(function(a,b){
-//               if (a.name < b.name) {
-//                   return 1;
-//              }else{
-//              return -1;
-//           }
-//          });
-//           // console.log(sortNameZa);
-//  for(let i = 0 ; i < sortNameZa.length ; i++){
-//   pokeResult.innerHTML +=
-//   `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter">
-//  <h3 class="card-title">${sortNameZa[i].num} ${sortNameZa[i].name}</h3>
-//   <img class="card-img-top" src=${sortNameZa[i].img} alt="Card image cap">
-// <div class="card-body">
-//  <p class="card-text">${sortNameZa[i].type}</p>
-// </div>
-// </div>`
-// }
-//   }
-
-
+});
