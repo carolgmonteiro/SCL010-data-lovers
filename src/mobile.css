@@ -1,55 +1,95 @@
 /* hacer responsivo */
-@media (max-width: 450px){
-    html, body {
-        margin: 0px;
-        padding: 0px;
-    }
-    .nav_options{
-        display: none;
-    }
-    nav{
-        background-color: #E71D23;
-        justify-content: space-between;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 80%;
-    }
-    .search-box {
-       max-width: 80%;
-     }
-    .home{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .headerInfo{
-        max-width: 80%;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .contOptionPoketLeft{
-        padding: 20px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .contOptionPoketRight{
-        padding: 20px;
-        display: flex;
-        flex-wrap: wrap;
-    }
+@media (max-width: 450px) {
+  html,
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  .nav_options {
+    display: none;
+  }
+  nav {
+    background-color: #f53e28;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 
+  .headerInfo {
+    background: url(../src/img/background_pokemon.svg);
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    height: 500px;
+    /* background: #c5daea; */
+    font-size: 18px;
+    padding-top: 80px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* width: 100%; */
+  }
+  .titleOptionHome {
+    font-size: 35px;
+    color: #16355c;
+    max-width: 600px;
+  }
+  .contOptionPoketLeft {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 85%;
+    float: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    text-align: left;
+    /* padding-right: 25px;
+    padding-left: 25px; */
+    justify-content: center;
+  }
+  .contOptionPoketRight {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 85%;
+    float: none;
+    flex-wrap: wrap;
+    text-align: left;
+    /* padding-right: 25px;
+    padding-left: 25px; */
+    justify-content: center;
+  }
+  .home {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .headerInfo {
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contOptionPoketLeft {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contOptionPoketRight {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-@media (min-width: 425px ) and (max-width: 768px){
-    nav li a{
-        color: black;
-    }
-    .home{
-        flex-direction: column;
-    }
-    .contOptionPoketLeft{
-        flex-direction: column;
-    }
-
+@media (min-width: 425px) and (max-width: 768px) {
+  nav li a {
+    color: black;
+  }
+  .home {
+    flex-direction: column;
+  }
+  .contOptionPoketLeft {
+    flex-direction: column;
+  }
 }
