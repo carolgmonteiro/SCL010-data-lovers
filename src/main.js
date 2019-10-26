@@ -20,15 +20,20 @@ fetch(
       for (let i = 0; i < data.length; i++) {
         cardGallery +=
           //onclick="showModal(${data[i].id})"
-          `<div class="card" style="width: 210px;" data-toggle="modal">
-     <h3 class="card-title">${data[i].num} ${data[i].name}</h3>
-     <img class="card-img-top" src=${data[i].img} alt="Card image cap">
-     <div class="card-body">
-     <p class="card-text">Tipo: ${data[i].type}</p>
-     <p class="card-text">Debilidad: ${data[i].weaknesses}</p>
-     <p class="card-text">Freq. horária: ${data[i].spawn_time}hrs</p>
-     </div>
-     </div>`;
+          `<div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <h1>${data[i].num} ${data[i].name}</h1> 
+              <img src="${data[i].img}" alt="Avatar" class="card img">
+            </div>
+            <div class="flip-card-back">
+             
+              <p>Tipo: ${data[i].type}</p> 
+              <p>Debilidad: ${data[i].weaknesses}</p>
+              <p>Freq. horária: ${data[i].spawn_time}hrs</p>
+            </div>
+          </div>
+        </div>`;
       }
       pokeResult.innerHTML = cardGallery;
     };
@@ -96,17 +101,17 @@ fetch(
       document.getElementById("home").style.display = "none";
       document.getElementById("headerInfo").style.display = "none";
       document.getElementById("allPokemons").style.display = "none";
-      document.getElementById("poketGo").style.display = "flex";
+      document.getElementById("poketGo").style.display = "block";
     });
     //PoketGo Home
-    document.getElementById("btnBackHome").addEventListener("click", () => {
-      cardGallery = "";
-      pokeStatsResult.innerHTML = "";
-      document.getElementById("home").style.display = "flex";
-      document.getElementById("headerInfo").style.display = "flex";
-      document.getElementById("allPokemons").style.display = "flex";
-      document.getElementById("poketGo").style.display = "none";
-    });
+    // document.getElementById("btnBackHome").addEventListener("click", () => {
+    //   cardGallery = "";
+    //   pokeStatsResult.innerHTML = "";
+    //   document.getElementById("home").style.display = "block";
+    //   document.getElementById("headerInfo").style.display = "block";
+    //   document.getElementById("allPokemons").style.display = "block";
+    //   document.getElementById("poketGo").style.display = "none";
+    // });
     //Home navBar para PoketDex
     document.getElementById("navPoketDex").addEventListener("click", () => {
       cardGallery = "";
@@ -115,6 +120,15 @@ fetch(
       document.getElementById("headerInfo").style.display = "none";
       document.getElementById("allPokemons").style.display = "block";
       document.getElementById("poketGo").style.display = "none";
+    });
+    //Home navbar para PoketGo
+    document.getElementById("navPoketGo").addEventListener("click", () => {
+      cardGallery = "";
+      pokeStatsResult.innerHTML = "";
+      document.getElementById("home").style.display = "none";
+      document.getElementById("headerInfo").style.display = "none";
+      document.getElementById("allPokemons").style.display = "none";
+      document.getElementById("poketGo").style.display = "block";
     });
     //Home para PoketDex
     document.getElementById("btnPokedex").addEventListener("click", () => {
@@ -125,13 +139,14 @@ fetch(
       document.getElementById("allPokemons").style.display = "block";
       document.getElementById("poketGo").style.display = "none";
     });
-    //PoketGo Home (down)
-    document.getElementById("btnBackHome1").addEventListener("click", () => {
-      cardGallery = "";
-      pokeStatsResult.innerHTML = "";
-      document.getElementById("home").style.display = "flex";
-      document.getElementById("headerInfo").style.display = "flex";
-      document.getElementById("allPokemons").style.display = "flex";
-      document.getElementById("poketGo").style.display = "none";
-    });
   });
+
+// <div class="card" style="width: 210px;" data-toggle="modal">
+// <h3 class="card-title">${data[i].num} ${data[i].name}</h3>
+// <img class="card-img-top" src=${data[i].img} alt="Card image cap">
+// <div class="card-body">
+// <p class="card-text">Tipo: ${data[i].type}</p>
+// <p class="card-text">Debilidad: ${data[i].weaknesses}</p>
+// <p class="card-text">Freq. horária: ${data[i].spawn_time}hrs</p>
+// </div>
+// </div>
