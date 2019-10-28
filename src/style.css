@@ -279,8 +279,6 @@ input {
   border: none;
 }
 #btnPokedex:hover {
-  /* background-color: #dcdcdc;
-  color: #333333; */
   box-shadow: 0 4px 7.5px 0 rgba(51, 51, 51, 0.4);
 }
 
@@ -289,7 +287,6 @@ input {
   padding-bottom: 15px;
   width: 40%;
   float: right;
-  /* display: flex; */
   flex-wrap: wrap;
   text-align: left;
   padding-right: 3%;
@@ -298,10 +295,7 @@ input {
 }
 .optionPoketRight {
   padding-top: 10px;
-  /* padding-left: 30px; */
-  /* display: flex; */
   flex-wrap: wrap;
-  /* justify-content: flex-start; */
   text-align: left;
 }
 .poketGo {
@@ -355,7 +349,6 @@ input {
 .video {
   width: 100%;
   height: 100%;
-  /* position: absolute!important; */
 }
 a:-webkit-any-link {
   color: -webkit-link;
@@ -422,15 +415,19 @@ a:-webkit-any-link {
   border-radius: 30px;
   border: 2px solid #333333;
   font-size: 14px;
-  /* font-family: "Fira Sans", sans-serif; */
   text-align: left;
-  /* justify-content: right; */
   outline: none;
-  padding: 7px;
+  padding: 4px;
   justify-content: center;
   margin: 0 auto;
-  width: 250px;
+  width: 300px;
   margin: 2%;
+  padding-left: 10px;
+}
+input {
+  border: none;
+  outline: none;
+  width: 200px;
 }
 .filter-box {
   background-color: white;
