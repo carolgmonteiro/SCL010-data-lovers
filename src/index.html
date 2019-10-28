@@ -8,6 +8,17 @@
     <title>PoketMon</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#searchPokemon").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#pokeList").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script> -->
   </head>
   <body>
   <!-- cabeza de la pagina home -->
@@ -40,8 +51,11 @@
       <!-- <div>
         <h3 class="InfoHome">Tu plataforma de consulta para Pokemon Go!</h3>
       </div> -->
-      
+      <div id="section03" class="demo">
+          <a href="#home"><span></span></a>
+        </div>
     </div>
+    
     <!-- contenido pantalla home -->
    <main id="home" class="home" style="display: block" >
      <!-- Opcion Poketdex -->
@@ -81,7 +95,7 @@
     <!-- pagina del Guia PoketGo -->
     <section id="poketGo"  style="display: none">
             <div class = "headerPokeGo">
-                <h2 class="infoPokeGo">Conoce los mejores trucos y consejos para convertirte en un maestro</h2>
+                <h2 class="infoPokeGo">Pokemon Go: ¡Conoce los mejores trucos y consejos para convertirte en un maestro!</h2>
                 <!-- <button id= "btnBackHome" class="buttonBack"><img src="https://image.flaticon.com/icons/svg/263/263085.svg" height="30px" style="float: right" alt="backHome"></button> -->
               </div>
                 <!-- contenido guia PoketGo -->
@@ -154,10 +168,19 @@
           <!-- <img src="img/filter.svg" alt="icone filtro" class="iconeFiltro"> -->
         <!-- filtro orden -->
     <div class="filters">
-        
+         <!--Buscar-->
+         <div class="search">
+            <!-- <label>Buscar por nombre:</label> -->
+          <div class="search-box">
+            <span class="icon"></span><i class="fa fa-search"></i>
+            <input type="search" id="searchPokemon" placeholder="Buscar pokémon"/>
+            <button id="search-btn"> Buscar </button>
+          </div>
+        </div>
      <div>
-      <select name="slctOrder" id= "slctFilterOrder" class="search-box">
-          <option value="Order">Eligir el orden</option> 
+        <!-- <label>Filtrar por orden:</label> -->
+      <select name="slctOrder" id= "slctFilterOrder" class="filter-box">
+          <option disabled selected value>Filtrar por orden:</option> 
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
           <option value="1-151">1-151</option>
@@ -166,8 +189,9 @@
       </div>
       <!----filtro tipos --> 
       <div>
-      <select name="slctType" id= "slctFilterType" class="search-box">
-          <option value="Tipos">Filtrar por Tipos</option> 
+          <!-- <label>Filtrar por tipo:</label> -->
+      <select name="slctType" id= "slctFilterType" class="filter-box">
+          <option disabled selected value>Filtrar por tipo:</option> 
           <option value="Water">Agua</option>
           <option value="Bug">Bicho</option>
           <option value="Dragon">Dragon</option>
@@ -182,13 +206,14 @@
           <option value="Rock">Roca</option>
           <option value="Ground">Tierra</option>
           <option value="Poison">Veneno</option>
-          <option value="Flying">Volador</option>
+          
           </select>
         </div>
         <div>
+            <!-- <label>Filtrar por debilidad:</label> -->
       <!-- filtro debilidad -->
-      <select name="slctWeaknesses" id= "slctFilterWeaknesses" class="search-box">
-        <option value="Debilidad">Filtrar por debilidad</option> 
+      <select name="slctWeaknesses" id= "slctFilterWeaknesses" class="filter-box">
+        <option disabled selected value>Filtrar por debilidad:</option> 
         <option value="Water">Agua</option>
         <option value="Bug">Bicho</option>
         <option value="Dragon">Dragon</option>
@@ -206,25 +231,25 @@
         <option value="Flying">Volador</option>
           </select>
         </div>
-        <!-- filtro buscador -->
-        <!-- <div class="search-box">
-            <input type="search" placeholder="Busca aquí tu pokemón">
-            <span class="icon"><button id="btnSearch" class = "btnSearch"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="12px" alt="search"></button></span>
-          </div> -->
         </div>
         </div>
       <!-- <div id="pokeGallery"> -->
-        <div class="buttonBack"><!-- boton para bajo -->
-          <a href="#footer1" style="transition: all .50s linear;"><img src="https://image.flaticon.com/icons/svg/25/25623.svg" height="30px" alt="btnUp"><input type="button" id="btnDown"></a> </div>
+        
         <div id="pokeStats" class="pokeStats">
         </div>
+        <div id="section03" class="demo-1">
+            <a href="#footer"><span></span></a>
+          </div>
         <!-- Div nueva con los cards -->
         <div id="pokeList" class="row">
       </div>
+      <div id="noFound">
+        </div>
+        
     </section>
   <!-- pie de la pagina -->
-    <footer>
-          <div id="footer1"><p>&copy; Copyright 2019. Designed by Carolina Guido</p></div>
+    <footer id="footer">
+          <div id="footer1"><a href="https://github.com/carolgmonteiro" target="blank_" style="color: white">&copy; Copyright 2019. Developed by Carolina Guido</a></div>
           <div class="social-icons">
           <div class="social-icons img"> 
               <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="img/face-logo.png" height="30px"></a>

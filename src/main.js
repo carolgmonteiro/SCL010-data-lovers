@@ -15,6 +15,7 @@ fetch(
     let cardGallery = "";
     const pokeResult = document.getElementById("pokeList");
     const pokeStatsResult = document.getElementById("pokeStats");
+
     //Imprimir Elementos de la Galería Pokemones
     const showGallery = data => {
       for (let i = 0; i < data.length; i++) {
@@ -24,19 +25,39 @@ fetch(
           <div class="flip-card-inner">
             <div class="flip-card-front">
             <h1>${data[i].num} ${data[i].name}</h1> 
-              <img src="${data[i].img}" alt="Avatar" class="card img">
+              <img src="${data[i].img}" alt="Avatar" class="${data[i].type[0]}">
             </div>
             <div class="flip-card-back">
-             
-              <p>Tipo: ${data[i].type}</p> 
+            <h1 class="${data[i].type[0]}">${data[i].type[0]}</h1>
+              <p>Caramelos: ${data[i].candy_count}</p>
+              <p>Huevos: ${data[i].egg}</p>
               <p>Debilidad: ${data[i].weaknesses}</p>
-              <p>Freq. horária: ${data[i].spawn_time}hrs</p>
+              <p>Horário: ${data[i].spawn_time}hrs</p>
             </div>
           </div>
         </div>`;
       }
       pokeResult.innerHTML = cardGallery;
     };
+    //converir primera letra de string en mayuscula
+    function MaysPrimera(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    //Busca por nombre y numero de Pokemon
+    document.getElementById("search-btn").addEventListener("click", () => {
+      cardGallery = "";
+      pokeResult.innerHTML = "";
+      event.preventDefault();
+      let searchPokemon = document.getElementById("searchPokemon").value;
+      if (isNaN(searchPokemon) === true) {
+        searchPokemon = MaysPrimera(searchPokemon.toLowerCase());
+        // console.log("pokemon", namePokemon);
+        //Imprimir el resultado por tipo
+        showGallery(window.dataPokemon.filterPokemon(pokeData, searchPokemon));
+        document.getElementById("noFound").innerHTML = " ";
+      }
+    });
+
     //Mostrar cards en orden aleatorio
     const randomData = data => {
       return data.sort(() => Math.random() - 0.5);
@@ -49,13 +70,13 @@ fetch(
       searchPokemon = document.getElementById("slctFilterType").options[
         document.getElementById("slctFilterType").selectedIndex
       ].value;
-      //Imprimir la estadistica por tipo
-      pokeStatsResult.innerHTML = window.dataPokemon.computeStats(
-        pokeData,
-        searchPokemon
-      );
+      // //Imprimir la estadistica por tipo
+      // pokeStatsResult.innerHTML = window.dataPokemon.computeStats(
+      //   pokeData,
+      //   searchPokemon
+      // );
       //Imprimir el resultado por tipo
-      showGallery(window.dataPokemon.filterData(pokeData, searchPokemon));
+      showGallery(window.dataPokemon.filterType(pokeData, searchPokemon));
     });
     //Filtro por Debilidad
     document
@@ -68,7 +89,7 @@ fetch(
           document.getElementById("slctFilterWeaknesses").selectedIndex
         ].value;
         //Imprimir el resultado por debilidad
-        showGallery(window.dataPokemon.filterData(pokeData, searchPokemon));
+        showGallery(window.dataPokemon.filterWeak(pokeData, searchPokemon));
       });
     //FILTRO ORDEN
     document.getElementById("slctFilterOrder").addEventListener("input", () => {
@@ -103,15 +124,6 @@ fetch(
       document.getElementById("allPokemons").style.display = "none";
       document.getElementById("poketGo").style.display = "block";
     });
-    //PoketGo Home
-    // document.getElementById("btnBackHome").addEventListener("click", () => {
-    //   cardGallery = "";
-    //   pokeStatsResult.innerHTML = "";
-    //   document.getElementById("home").style.display = "block";
-    //   document.getElementById("headerInfo").style.display = "block";
-    //   document.getElementById("allPokemons").style.display = "block";
-    //   document.getElementById("poketGo").style.display = "none";
-    // });
     //Home navBar para PoketDex
     document.getElementById("navPoketDex").addEventListener("click", () => {
       cardGallery = "";
