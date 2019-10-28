@@ -1,335 +1,641 @@
-html, body {
-    margin: 0px;
-    padding: 0px;
-    scroll-behavior: smooth;
-    
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
 }
 
-nav{
-    background-color: #E71D23;
-    padding-left: 100px;
-    padding-right: 100px;
-    /* padding-bottom: 5px;
+nav {
+  background-color: #f53e28;
+  padding-left: 3%;
+  padding-right: 3%;
+  /* padding-bottom: 5px;
     padding-top: 5px; */
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 9999;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.4);
 }
-nav ul{
-    list-style: none;
-    display: flex;
-    padding: 0px;
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0px;
 }
-nav li a{
-    color: white;
-    text-decoration: none;
+nav li a {
+  color: white;
+  text-decoration: none;
 }
 body {
-    background-color: white;
-    font-family: sans-serif
+  background-color: white;
+  font-family: sans-serif;
 }
-input{
-    border: none;
-    outline: none;
+input {
+  border: none;
+  outline: none;
 }
 .logo-poketmon {
-    height: 50px;
-    max-width: 100%;
-    min-width: 80%;
-  }
+  height: 35px;
+  max-width: 100%;
+  min-width: 80%;
+}
 
- .social-icons{
-    display: inline-flex;
-    padding-right: 15px;
-    justify-content: right;
-    /* align-content: flex-end; */
+.social-icons {
+  display: inline-flex;
+  padding-right: 2%;
+  justify-content: right;
+  align-content: flex-end;
 }
-.social-icons img{
-    max-width: 100px;
-    height: 40px;
-    /* margin-top: 10px; */
-    align-content: flex-end;
-    /* padding-right: 10px; */
-    padding-left: 10px;
+
+.contact a {
+  display: inline;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #000;
+
+  transition: background-size 0.2s;
 }
- .headerInfo{
-    background: #C5DAEA;
-    font-size: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 250px;
-    padding-right: 250px;
-    align-items: center;
-    /* display: flex; */
-    justify-content: space-between;
-    box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.4);
+
+.contact a:link {
+  text-decoration: none;
+  color: #fff;
 }
-.home{
-    color: #333333;
-    padding-bottom: 50px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+
+.contact a:visited {
+  color: #fff;
 }
-.titleOptionHome{
-    font-size: 55px;
-    color:#333333;
+
+.contact a:hover {
+  background-size: 4px 50px;
+  color: #f53e28;
 }
-.InfoHome{
-    font-size: 20px;
-    color:#333333;
+.headerInfo {
+  background: url(../src/img/background_pokemon.svg);
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  height: 480px;
+  font-size: 18px;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.textOptionHome{
-    font-size: 16px;
-    color:#333333;
+#section03 a {
+  padding-top: 0px;
 }
-.contOptionPoketLeft{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: flex;
-    /* flex-wrap: wrap; */
-    text-align: left;
-    padding-right: 250px;
-    padding-left: 250px;
+.demo a {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
 }
-.optionPoketLeft{
-    padding-top: 10px;
-    /* display: flex; */
-    flex-wrap: wrap;
-    text-align: left;
-    padding-right: 30px;
+.demo a:hover {
+  opacity: 0.5;
+}
+
+.demo-1 a {
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.demo-1 a:hover {
+  opacity: 0.5;
+}
+
+#section03 a {
+  padding-top: 60px;
+}
+#section03 a span {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -23px;
+  border: 2px solid #16355c;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0 4px 7.5px 0 rgba(51, 51, 51, 0.4);
+}
+#section03 a span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #16355c;
+  border-bottom: 1px solid #16355c;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+#section03 a span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: sdb03 3s infinite;
+  animation: sdb03 3s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.home {
+  color: #333333;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  padding-left: 3%;
+  padding-right: 3%;
+  height: auto;
+  display: inline-block;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+.titleOptionHome {
+  font-size: 40px;
+  color: #16355c;
+  max-width: 600px;
+}
+.InfoHome {
+  font-size: 25px;
+  color: #16355c;
+}
+.textOptionHome {
+  font-size: 16px;
+  color: #16355c;
+}
+.contOptionPoketLeft {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 40%;
+  float: left;
+  /* display: flex; */
+  flex-wrap: wrap;
+  text-align: left;
+  padding-right: 3%;
+  padding-left: 3%;
+  justify-content: center;
+}
+.optionPoketLeft {
+  padding-top: 10px;
+  /* display: flex; */
+  flex-wrap: wrap;
+  text-align: left;
+  padding-left: 30px;
+  /* padding-right: 30px;*/
 }
 .PokeTdex {
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px ;
-    min-width: 80%;
-  }
-  #btnPokedex{
-    font-family: sans-serif;
-    font-size: 25px;
-    color: white;
-    border: 2px solid #333333;
-    width: 450px;
-    padding: 5px;
-    cursor: pointer;
-    background-color: #0070B6;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    outline: none;  
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-basis: 70%; */
+  width: 100%;
+  margin-right: 200px;
+  padding-right: 40px;
 }
-#btnPokedex:hover{
-    background-color: #DCDCDC;
-    color: #333333;
+#btnPokedex {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: white;
+  /* border: 2px solid #333333; */
+  width: 100%;
+  flex-basis: 100%;
+  padding: 7px;
+  cursor: pointer;
+  background-color: #0070b6;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.3s;
+  border: none;
+}
+#btnPokedex:hover {
+  /* background-color: #dcdcdc;
+  color: #333333; */
+  box-shadow: 0 4px 7.5px 0 rgba(51, 51, 51, 0.4);
 }
 
-.contOptionPoketRight{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 250px;
-    padding-left: 250px;
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: flex-start;
-    text-align: right;
+.contOptionPoketRight {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 40%;
+  float: right;
+  /* display: flex; */
+  flex-wrap: wrap;
+  text-align: left;
+  padding-right: 3%;
+  padding-left: 3%;
+  justify-content: center;
 }
-.optionPoketRight{
-    padding-top: 10px;
-    padding-left: 30px;
-    /* display: flex; */
-    flex-wrap: wrap;
-    /* justify-content: flex-start; */
-    text-align: right;
+.optionPoketRight {
+  padding-top: 10px;
+  /* padding-left: 30px; */
+  /* display: flex; */
+  flex-wrap: wrap;
+  /* justify-content: flex-start; */
+  text-align: left;
 }
-.PokeTGo {
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px ;
-    min-width: 80%;
-  }
-.titleOptionGo{
-    font-size: 60px;
-    color: #333333;
+.poketGo {
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  min-width: 100%;
 }
-.infoPokeGo{
-    font-size: 30px;
-    color:#333333;
+.titleOptionGo {
+  font-size: 60px;
+  color: #16355c;
 }
-.poketGoInfos{
-    padding-top: 20px;
-    color: #333333;
-    padding-right: 400px;
-    padding-left: 400px;
-    padding-bottom: 20px;
-    font-family: sans-serif;
-    text-align: justify;
+.infoPokeGo {
+  font-size: 45px;
+  color: #16355c;
 }
-.headerPokeGo{
-    background: #C5DAEA;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 400px;
-    padding-left: 400px;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.7);
+
+.headerPokeGo {
+  background: #c5daea;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  align-items: center;
 }
-.video{
-    width: 100%;
-    height: 100%;
-    /* position: absolute!important; */
+.poketGoInfos {
+  margin: 0 auto;
+  padding-top: 7%;
+  color: #333333;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-bottom: 5%;
+  font-family: sans-serif;
+}
+
+.poketGoInfos h2 {
+  background-color: #c5daea;
+  color: #16355c;
+  font-size: 18px;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+.poketGoInfos img {
+  width: 100%;
+  min-width: 60%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  /* position: absolute!important; */
 }
 a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
 }
-.buttonBack{
-    font-family: monospace;
-    font-size: 20px;
-    background: transparent;
-    color: #333333;
-    cursor: pointer;
-    border-radius: 10px;  
-    border: none;
-    outline: none;
-    width: 100px;
-    float: right;
-    display: flex;
-    flex-wrap: wrap;
-    height: 70px;
-    box-sizing: content-box
+.buttonBack {
+  background: transparent;
+  color: #333333;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 70px;
+  float: right;
 }
-#btnPoketGo{
-    font-family: sans-serif;
-    font-size: 25px;
-    color: #333333;
-    border: 2px solid #333333;
-    width: 450px;
-    padding: 5px;
-    cursor: pointer;
-    background-color: white;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    outline: none;  
+#btnPoketGo {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: #333333;
+  border: 2px solid #333333;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  outline: none;
+  flex-basis: 100%;
+  transition: 0.3s;
 }
-#btnPoketGo:hover{
-    background-color: #DCDCDC;
-    color: #333333;
+#btnPoketGo:hover {
+  background-color: #dcdcdc;
+  color: #333333;
 }
-.headerFilter{
-    background: rgb(176, 208, 233);
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-right: 250px;
-    padding-left: 250px;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.7);
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.headerFilter {
+  background: rgb(176, 208, 233);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /* padding-right: 3%; */
+  /* padding-left: 3%; */
+  align-items: center;
+  z-index: 9999;
+  width: 100%;
+  /* margin-top: 5%; */
+  margin: 0 auto;
+  position: fixed;
+  justify-content: space-between;
+  box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.7);
 }
 .iconeFiltro {
-    display: flex;
-    flex-wrap: wrap;
-    height: 50px ;
-    min-width: 80%;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  width: 10%;
+}
 .search-box {
-    background-color: white;
-    border-radius:30px;
-    border: 2px solid #333333;
-    font-size: 14px;
-    font-family: "Fira Sans", sans-serif;
-    text-align: center;
-    justify-content :right;
-    outline: none;
-    padding: 7px;
-    width: 200px;
-    justify-content: center;
- }
- /* .btnSearch{
-     background-color: white;
-     border: none;
-     outline: none;
- } */
-
- .pokeStats{
-    font-family: sans-serif;
-    font-size: 25px;
-    color: #333333;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 100px;
-    padding-right: 100px;
- }
-
-.card {
-    color: #333333;
-    width: 260px;
-    height: 300px;
-    margin: 20px;
-    text-align: center;
-    background-color: #fff;
-    /* background-color:  rgb(223, 222, 222); */
-    border-radius: 10px;
-    /* border-color: rgba(167, 107, 231, 0.568); */
-    border: 3px solid #333333;
-    margin-right: 40px;
-    box-shadow: 0 2px 7.5px 0 rgba(51, 51, 51, 0.4);
-  }
-.card:hover{
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-
+  background-color: white;
+  border-radius: 30px;
+  border: 2px solid #333333;
+  font-size: 14px;
+  /* font-family: "Fira Sans", sans-serif; */
+  text-align: left;
+  /* justify-content: right; */
+  outline: none;
+  padding: 7px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 250px;
+  margin: 2%;
 }
-.card img {
-    /* width: 100px; */
-    height: 100px;
-    align-self: center;
-    /* margin: 1em;
-    padding: 0px; */
-  }
-.card-body{
-    width: 210px;
-    height: 130px; 
-    padding: 0px;
-  }
-.card-text{
-    text-align: center;
-
+.filter-box {
+  background-color: white;
+  border-radius: 30px;
+  border: 2px solid #333333;
+  font-size: 14px;
+  /* font-family: "Fira Sans", sans-serif; */
+  text-align: center;
+  justify-content: right;
+  outline: none;
+  padding: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200px;
+  margin: 2%;
 }
+#search-btn {
+  background: #a4a4a4;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 20px 7px 20px;
+  /* margin-left: 8px; */
+  border-radius: 40px;
+  border: none;
+  font-size: 12px;
+  font-family: "Fira Sans", sans-serif;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.search-box select {
+  margin: 2%;
+  flex-basis: 100%;
+  margin-left: 3%;
+}
+.pokeStats {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: #333333;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card-front p {
+  font-size: 12px;
+}
+.flip-card h1 {
+  font-size: 18px;
+}
+.flip-card p {
+  font-size: 16px;
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-back p {
+  font-size: 14px;
+}
+.flip-card-back h1 {
+  font-size: 14px;
+  padding: 2px;
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-image: linear-gradient(to top, #cfd9df 0%, #c5daea 100%);
+  color: #16355c;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #0070b6;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 .row {
-    /* margin-left: 150px; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 100px;
-    padding-right: 100px;
-    /* background-color: rgb(228, 228, 228); */
+  min-height: 250px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-footer{
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin: 0px;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
-    height: 70px;
-    background: #333333;
-    color: #fff;
-    width: 100%; 
-    box-sizing: border-box;
+footer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  height: 100px;
+  background: #333333;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+footer img {
+  margin: 0.5rem;
+}
 
+footer a {
+  cursor: pointer;
+}
+
+.flip-card img {
+  width: 60%;
+  align-self: center;
+  border-radius: 50%;
+}
+.Bug {
+  background-color: #729f3f;
+}
+.Dragon {
+  /* background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%); */
+  background-color: rgba(0, 0, 0, 0);
+  background-color: #f16e57;
+}
+.Fairy {
+  background-color: #fdb9e9;
+}
+.Fire {
+  background-color: #fd2424;
+}
+.Ghost {
+  background-color: #8c7fa0;
+}
+.Ground {
+  /* background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%); */
+  background-color: rgba(0, 0, 0, 0);
+  background-color: #ab9842;
+}
+.Normal {
+  background-color: #a4acaf;
+}
+.Psychic {
+  background-color: #b1598c;
+}
+.Steel {
+  background-color: #9eb7b8;
+}
+.Electric {
+  background-color: #eed535;
+}
+.Fighting {
+  background-color: #d56723;
+}
+.Flying {
+  /* background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%); */
+  /* background-color: rgba(0, 0, 0, 0); */
+  background-color: whitesmoke;
+}
+.Grass {
+  background-color: #9bcc50;
+}
+.Ice {
+  background-color: #51c4e7;
+}
+.Poison {
+  background-color: #bb63d3;
+}
+.Rock {
+  background-color: #a38c21;
+}
+.Dark {
+  background-color: #707070;
+}
+.Water {
+  background-color: #4592c4;
+}
+/*seccion de ordenar/limpiar/filtrar*/

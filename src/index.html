@@ -8,13 +8,24 @@
     <title>PoketMon</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#searchPokemon").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#pokeList").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script> -->
   </head>
   <body>
   <!-- cabeza de la pagina home -->
-    <header>
-      <nav>
+ 
+      <nav id="navBar">
         <div class= "logoImg">
-            <ul><a href="index.html"><img src="img/logo poketmon.png" alt="logo_poketMon" class="logo-poketmon"></a> </ul>
+            <ul><a href="index.html"><img src="img/logo-poketmon.svg" alt="logo_poketMon" class="logo-poketmon"></a> </ul>
         </div>
         
           <div class="social-icons">
@@ -22,81 +33,93 @@
                   <input type="search" placeholder="Busca aquí tu pokemón">
                   <span class="icon"><i class="fa fa-search"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="20px" alt="search"></i></span>
                 </div> -->
-              <div class="social-icons img">
-                  <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="img/face-logo.png" ></a>
+              
+              <div class="contact">
+                  <a href="#allPokemons" id="navPoketDex">PoketDex</a>
                 </div>
-                <div class="social-icons img">
-                  <a href="https://www.instagram.com/pokemongochileoficial/"><img src="img/insta-logo.png" ></a>
+                <div class="contact">
+                  <a href="#poketGo" id="navPoketGo">PoketGo</a>
                 </div>
+               
             </div>
-    </nav>
-    </header>
-    <header id ="headerInfo" class="headerInfo" style="display: block">
+          </nav>
+   
+    <div id ="headerInfo" class="headerInfo" style="display: block">
       <div>
-        <h1 class= "titleOptionHome">¡Hola bienvenido a PokeTmon!</h1>
+        <h1 class= "titleOptionHome">Encuentra acá tus pokemones de la generación Kanto</h1>
       </div>
-      <div>
-        <h3 class="InfoHome">PokeTmon, tu plataforma de consulta para Pokemon Go!</h3>
-      </div>
-    </header>
+      <!-- <div>
+        <h3 class="InfoHome">Tu plataforma de consulta para Pokemon Go!</h3>
+      </div> -->
+      <div id="section03" class="demo">
+          <a href="#home"><span></span></a>
+        </div>
+    </div>
+    
     <!-- contenido pantalla home -->
    <main id="home" class="home" style="display: block" >
+     <!-- Opcion Poketdex -->
       <div class = "contOptionPoketLeft">
+          <div class="homeImg">
+              <img src="img/PokeTdex.svg" alt="PoketDexImg" class="PokeTdex">
+          </div>
           <div class = "optionPoketLeft">
               <div>
-                  <a href="#allPokemons" style="transition: all .50s linear;"><input type="button" value="poketDex" id="btnPokedex"></a>  
+                  <!-- <a href="#allPokemons" style="transition: all .50s linear;"><input type="button" value="poketDex" id="btnPokedex"></a>
+                     -->
+                     <button id="btnPokedex">PoketDex</button>
                 </div>
-          <!-- Opcion Poketdex -->
           <div class= "textOptionHome">
             <h4>Accede a los principales datos de tus Pokemones de la Generación "Kanto" y obtén la mejor información para cada batalla</h4>
           </div>
+         
           </div>
-         <div class="homeImg">
-            <img src="img/PokeTdex.png" alt="PoketDexImg" class="PokeTdex">
-        </div>
+        
       </div>
       <!-- Opcion PoketGo -->
         <div class = "contOptionPoketRight">
             <div class="homeImg">
-                <img src="img/PokeTGo.png" alt="PoketGoImg" class="PokeTGo">
+                <img src="img/PokeTGo.svg" alt="PoketGoImg" class="PokeTdex">
               </div>
-          <div class = "optionPoketRight">
+          <div class = "optionPoketLeft">
               <div>
                   <button id="btnPoketGo">+ poketGo</button>
                 </div>
-          <div class= "textOptionHome">
-            <h4>Pokémon Go: Tips y links para empezar a jugar, calculadoras para combates y las mejores redes para que te conectes con otros jugadores</h4>
-          </div>
+              <div class= "textOptionHome">
+                  <h4>Tips y links para empezar a jugar, calculadoras para combates y las mejores redes para que te conectes con otros jugadores</h4>
+                </div>
+
           </div>
     </div>
     </main>
     <!-- pagina del Guia PoketGo -->
-    <section id="poketGo" style="display: none" >
-        <header class="headerPokeGo">
-            <div class = "nav_options">
-                <button id= "btnBackHome" class="buttonBack"><img src="https://image.flaticon.com/icons/svg/263/263085.svg" height="30px" style="float: right" alt="backHome"></button>
-                <h1 class= "titleOptionGo">PoketGo!</h1>
-                <h2 class="infoPokeGo">Guía con los mejores trucos y consejos para convertirte en un maestro</h2>
-          </div>
-        </header>
-        <!-- contenido guia PoketGo -->
-          <div class="poketGoInfos"> 
+    <section id="poketGo"  style="display: none">
+            <div class = "headerPokeGo">
+                <h2 class="infoPokeGo">Pokemon Go: ¡Conoce los mejores trucos y consejos para convertirte en un maestro!</h2>
+                <!-- <button id= "btnBackHome" class="buttonBack"><img src="https://image.flaticon.com/icons/svg/263/263085.svg" height="30px" style="float: right" alt="backHome"></button> -->
+              </div>
+                <!-- contenido guia PoketGo -->
+          <div class="poketGoInfos" >
             <img src="https://d2skuhm0vrry40.cloudfront.net/2015/articles//a/1/8/4/2/0/5/3/eurogamer-k16dvx.jpg/EG11/resize/690x-1/quality/75/format/jpg" alt="pokemonGo">
+            <!-- <div style="width:100%;height:0;padding-bottom:57%;position:relative;"><iframe src="https://giphy.com/embed/l41YouCUUcreUabHW" width="100%" height="100%" style="position:absolute" 
+              frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div> -->
             <h2>¿Qué es Pokémon GO?</h2>
             <p>Desarrollado por Niantic, el estudio responsable de Ingress, Pokémon GO es un juego de realidad aumentada 
               para dispositivos móviles que propone convertirnos en entrenadores Pokémon en el mundo real. Para ello habrá 
               que activar la geolocalización (GPS) y la conectividad de datos en el móvil e interactuar con el mundo que nos 
               rodea, visitando Gimnasios y Pokeparadas y cazando a ciento cincuenta Pokémon diferentes. La aplicación se 
               encarga de seguir nuestros movimientos y nos irá avisando cuando estemos cerca de un Pokémon al que cazar.
-              Fuente: https://www.eurogamer.es/articles/trucos-guia-pokemon-go
             </p>
-            
+            <p style="font-size: 12px;">Fuente: https://www.eurogamer.es/articles/trucos-guia-pokemon-go</p>
+            <div style="width:100%;height:0;padding-bottom:157%;position:relative;"><iframe src="https://giphy.com/embed/xT8qAWOs8vu8VACFqw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/gif-artist-studioghibligif-studio-ghibli-xT8qAWOs8vu8VACFqw"></a></p>
+        
             <h2>¿Cómo descargo Pokémon GO en iOS o Android?</h2>
             <p>Pokémon GO ya está disponible en la iTunes App Store y Google Play Store de Australia, Nueva Zelanda, 
               Estados Unidos y Japón. Si tienes un iPhone, simplemente cambia la región del teléfono a Australia o Nueva Zelanda y descárgalo usando una cuenta de iTunes para 
               dicho país. En el caso de usar un móvil Android, puedes descargar el fichero APK e instalarlo problemas 
               (te avisará que es una fuente desconocida, pero la que os proponemos, APKMirror, es una web fiable. Ojo 
               con otras más dudosas, porque ya se han dado casos de ficheros APK con virus).</p>
+              <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/3o6MbmHFmYMLMbHo6k" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/pokemon-app-go-3o6MbmHFmYMLMbHo6k"></a></p>
               <a href="https://apps.apple.com/br/app/pok%C3%A9mon-go/id1094591345"><input type="button" value="Apple Store" id="btnIOS"></a>
               <a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=pt"><input type="button" value="Google Store" id="btnAndroid"></a>
             <h2>Cómo empezar a jugar?</h2>
@@ -106,9 +129,10 @@
               entrenadores a las pantallas táctiles de nuestros dispositivos móviles. Por lo tanto, y aunque el 
               componente estratégico sigue presente, hablamos de una lucha directa, en tiempo real, en la que nos 
               limitaremos a dos movimientos de ataque y en la que habrá que esquivar los envites y ataques del rival.
-              Fuente: https://vandal.elespanol.com/guias/guia-pokemon-go/combate-y-gimnasios
-              </p>
-              <h2>Por dentro de los tipos</h2>
+            </p>
+            <p style="font-size: 12px;">Fuente: https://vandal.elespanol.com/guias/guia-pokemon-go/combate-y-gimnasios</p>
+            <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/8UGGp7rQvfhe63HrFq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reaction-mood-8UGGp7rQvfhe63HrFq"></a></p>
+            <h2>Por dentro de los tipos</h2>
               <p>Uno de los elementos más tradicionales de la serie y que Pokémon GO está muy bien utilizado es el sistema de tipos. 
                   Cada Pokémon tiene uno o dos tipos, lo que garantiza ventajas y desventajas contra ciertos oponentes. Es la vieja 
                   lógica de Jo-Ken-Po: el fuego vence a la planta, vence al agua, vence al fuego.
@@ -126,7 +150,7 @@
               <h3>Calculadoras para combate</h3>
               <a href="https://pokemon.gameinfo.io/pt-br/tools/iv-calculator"><input type="button" value="Calculadora de IV Pokémon" id="btnCalculadora"></a>
               <a href="https://play.google.com/store/apps/details?id=com.cjin.pokegenie.standard&hl=pt"><input type="button" value="Calculadora Poke Genie" id="btnPokeGenie"></a>
-              <button id= "btnBackHome1" class="buttonBack"><img src="https://image.flaticon.com/icons/svg/263/263085.svg" height="30px" style="float: right" alt="backHome"></button>
+    
             </p>
             <h2>Otros Links</h2>
             <p><a href="https://www.eurogamer.es/articles/pokemon-go-como-encontrar-pokemon-cerca-atraparlos-facilmente">Pokémon GO - Cómo encontrar Pokémon cercanos y atraparlos fácilmente</a><br/>Aprende a localizar criaturas y la mejor forma de capturarlas.</p>
@@ -136,15 +160,27 @@
           </div>
     </section>
   <!-- pagina galeria de pokemons -->
-    <section id = "allPokemons" style="display: block">
-      <header class="headerFilter">
-          <div class = "nav_options">
-              <a href="index.html" class="social-icons"><img src="img/icone filtro.png" alt="icone filtro" class="iconeFiltro"></a>
+    <section id = "allPokemons" style="display: none">
+        <div class= "logoImg">
+            <ul><a href="index.html"><img src="img/logo-poketmon.svg" alt="logo_poketMon" class="logo-poketmon"></a> </ul>
         </div>
+      <div class="headerFilter">
+          <!-- <img src="img/filter.svg" alt="icone filtro" class="iconeFiltro"> -->
         <!-- filtro orden -->
+    <div class="filters">
+         <!--Buscar-->
+         <div class="search">
+            <!-- <label>Buscar por nombre:</label> -->
+          <div class="search-box">
+            <span class="icon"></span><i class="fa fa-search"></i>
+            <input type="search" id="searchPokemon" placeholder="Buscar pokémon"/>
+            <button id="search-btn"> Buscar </button>
+          </div>
+        </div>
      <div>
-      <select name="slctOrder" id= "slctFilterOrder" class="search-box">
-          <option value="Order">Eligir el orden</option> 
+        <!-- <label>Filtrar por orden:</label> -->
+      <select name="slctOrder" id= "slctFilterOrder" class="filter-box">
+          <option disabled selected value>Filtrar por orden:</option> 
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
           <option value="1-151">1-151</option>
@@ -153,8 +189,9 @@
       </div>
       <!----filtro tipos --> 
       <div>
-      <select name="slctType" id= "slctFilterType" class="search-box">
-          <option value="Tipos">Filtrar por Tipos</option> 
+          <!-- <label>Filtrar por tipo:</label> -->
+      <select name="slctType" id= "slctFilterType" class="filter-box">
+          <option disabled selected value>Filtrar por tipo:</option> 
           <option value="Water">Agua</option>
           <option value="Bug">Bicho</option>
           <option value="Dragon">Dragon</option>
@@ -169,13 +206,14 @@
           <option value="Rock">Roca</option>
           <option value="Ground">Tierra</option>
           <option value="Poison">Veneno</option>
-          <option value="Flying">Volador</option>
+          
           </select>
         </div>
         <div>
+            <!-- <label>Filtrar por debilidad:</label> -->
       <!-- filtro debilidad -->
-      <select name="slctWeaknesses" id= "slctFilterWeaknesses" class="search-box">
-        <option value="Debilidad">Filtrar por debilidad</option> 
+      <select name="slctWeaknesses" id= "slctFilterWeaknesses" class="filter-box">
+        <option disabled selected value>Filtrar por debilidad:</option> 
         <option value="Water">Agua</option>
         <option value="Bug">Bicho</option>
         <option value="Dragon">Dragon</option>
@@ -193,32 +231,31 @@
         <option value="Flying">Volador</option>
           </select>
         </div>
-        <!-- filtro buscador -->
-        <!-- <div class="search-box">
-            <input type="search" placeholder="Busca aquí tu pokemón">
-            <span class="icon"><button id="btnSearch" class = "btnSearch"><img src="https://image.flaticon.com/icons/svg/70/70376.svg" height="12px" alt="search"></button></span>
-          </div> -->
-        </header>
+        </div>
+        </div>
       <!-- <div id="pokeGallery"> -->
-        <div class="buttonBack"><!-- boton para bajo -->
-          <a href="#footer1" style="transition: all .50s linear;"><img src="https://image.flaticon.com/icons/svg/25/25623.svg" height="30px" alt="btnUp"><input type="button" id="btnDown"></a> </div>
+        
         <div id="pokeStats" class="pokeStats">
         </div>
+        <div id="section03" class="demo-1">
+            <a href="#footer"><span></span></a>
+          </div>
         <!-- Div nueva con los cards -->
         <div id="pokeList" class="row">
       </div>
-      <!-- boton para arriba -->
-      <div><a href="#allPokemons" style="transition: all .50s linear;" class="buttonBack"><img src="https://image.flaticon.com/icons/svg/25/25223.svg" height="30px" alt="btnUp"><input type="button" id="btnUp"></a></div>
-  </section>
+      <div id="noFound">
+        </div>
+        
+    </section>
   <!-- pie de la pagina -->
-    <footer>
-          <div id="footer1"><p>&copy; Copyright 2019</p></div>
+    <footer id="footer">
+          <div id="footer1"><a href="https://github.com/carolgmonteiro" target="blank_" style="color: white">&copy; Copyright 2019. Developed by Carolina Guido</a></div>
           <div class="social-icons">
           <div class="social-icons img"> 
-              <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="img/face-logo.png" height="50px"></a>
+              <a href="https://www.facebook.com/PokemonGOChileComunidad/"><img src="img/face-logo.png" height="30px"></a>
             </div>
             <div class="social-icons img">
-              <a href="https://www.instagram.com/pokemongochileoficial/"><img src="img/insta-logo.png" height="50px"></a>
+              <a href="https://www.instagram.com/pokemongochileoficial/"><img src="img/insta-logo.png" height="30px"></a>
             </div>
           </div>
     </footer>
